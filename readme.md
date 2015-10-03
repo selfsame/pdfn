@@ -15,3 +15,13 @@
 (maxim :a :b) 
 ;:numeric-err
 ```
+
+currently supports ```^var``` and ```^{:k :v}``` predicate meta, an optional map can hold other forms:
+
+```
+(rule foo [a b] 
+  {a #{1 2} b (every-pred number? even?)}
+  (+ a b))
+```
+
+keywords as predicates are broked at the moment
