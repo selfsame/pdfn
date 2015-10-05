@@ -13,11 +13,7 @@
   (reset! HASH->FN {})
   `true)
  
-
-
-
 (declare walk-table branch-row remove-idxs update-idxs get-idx-col can-collapse? non-collapsable-col?)
-
 
 
 (defprotocol IMatrix
@@ -27,8 +23,6 @@
   (-drop [m c])
   (-update [m idx idxs v]))      
  
-
-
 
 
 
@@ -46,10 +40,11 @@
     (Any. _meta))
   (meta [_] _meta)
   IMatrix
-  (-display [this] 
-    '_))
+  (-display [this] '_))
+
 
 (def any? #(= (type %) Any))
+
 (def pred? #(= (type %) Pred))
 
 
@@ -60,6 +55,8 @@
 (extend-type nil
   IMatrix
   (-display [this] this))
+
+
 
 (deftype Col [col idx _meta]
   clojure.lang.IObj
@@ -87,13 +84,14 @@
 
   IMatrix
   (-subcol [m s e] (Col. (subvec col s e) idx _meta))
-  (-display [this] (str idx  '-  (mapv  -display col) '= (-score this))
-    )
+  (-display [this] (str idx  '-  (mapv  -display col) '= (-score this)))
   (-score [this] (if (any? (first col)) -1 
     (+ (* 100
        (count (filter #(= %  (first col)) (rest col))))    
       (apply + (map (comp {true 1 false 0} pred?) col))))))
-  
+
+
+
 (deftype Matrix [cols _meta]
   clojure.lang.IObj
   (withMeta [_ new-meta]
@@ -159,12 +157,6 @@
       false)))
 
 
-
-
-
-
-
-
  
 (defn branch-row [-special -default]
   (if (or (empty? -special)
@@ -172,7 +164,6 @@
 
     ;leaf
     (list (:leafs (meta -special)) 'a 'b)
-    ;(:leafs (meta -special))
 
     ;switch
     (let [idx (if (first -special) (.idx (first -special)))
@@ -189,15 +180,10 @@
                 (first condition)
                 (cons 'and condition)))
             (list (:leafs (meta -special)) 'a 'b)
-            ;(:leafs (meta -special))
             (walk-table nay))
           (list 'if (list (.code token) idx)
             (branch-row (rest -special) yay)
-            (walk-table nay)
-            )))))
-
-
-
+            (walk-table nay) )))))
 
 
 (defn walk-table 
@@ -211,10 +197,7 @@
                 #(when (first %) (Col. [(first %)] (.idx %) {}))
                   sorted)
                   (update-in (meta mat) [:leafs] first)) ]
-            (branch-row -special -default)
-            ;(mapv type [mat (first mat) (next mat)] )
-            ;(-display sorted)
-            ))))
+            (branch-row -special -default)))))
 
 
 
@@ -294,12 +277,7 @@
 
 (defn reg-fn-quote [f q] (swap! FN->QUOTE assoc f q))
 
-(defn humanize [data] (clojure.walk/postwalk #(if (fn? %) (get @FN->QUOTE % %) %) data))
 
-
-
-    
-     
 
  
 ;TODO need to get unique fns for each arg, not the whole vec?
@@ -309,9 +287,7 @@
     (declare ~sym)
 
     (def ~sym 
-      (fn [& args#]
-        (apply (get-in (deref ~'pdf.core/_D) [~sym :fn] #())
-          args#)))))
+      (fn [& args#] ))))
 
 (defmacro pdf [sym -args & more] 
   (let [
@@ -320,149 +296,16 @@
     [spec code] (if (map? (first more)) [(first more)(rest more)] [{} more])
     [args -preds] (meta-args->pred-arg-pair -args)
     preds (mapv #(or %1 %2) (map #(get spec % nil) args) -preds)
-    upreds `(~'pdf.core/unique-get (hashed-form ~preds) ~preds)
-    variants (swap! DISPATCHMAP update-in [(symbol sym) arity] #(conj (or % {}) 
-     {preds usym}))
-    t (walk-table (make-pred-matrix 
-      (into {} (reverse  ;cljs reversal
-        (get-in @DISPATCHMAP [(symbol sym) arity]))) args))
-    ]
+    variants (swap! DISPATCHMAP update-in [(symbol sym) arity] #(conj (or % {}) {preds usym}))
     
- 
-
+    compiled 
+    (walk-table (make-pred-matrix 
+      (into {} (reverse  ;cljs reversal
+        (get-in @DISPATCHMAP [(symbol sym) arity]))) args))]
+    
   `(do 
     (def ~usym (~'fn  ~args ~@code))
     ;(prn (quote ~compiled))
-    (~'set! ~sym (~'fn ~args ~t))
-    (~'var ~usym) 
-    ;(~'walk-table (~'make-pred-matrix (get-in (deref ~'pdf.core/_D) [(~'var ~sym) ~arity]) (quote ~-args)))
-    )))
+    (~'set! ~sym (~'fn ~args ~compiled))
+    (~'var ~usym))))
 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- 
- (comment 
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      `(do (let [code#  (~'walk-table (~'make-pred-matrix (get-in ~dispatchmap [var-key# ~arity ~pass]) (quote ~args)))
-            arity-fn# 
-            (cond 
-              (= 0 ~arity)  (list [] (list 'do :?))
-              (= code# nil) (list (quote ~non-meta-args) #())
-              ;(= (first code#) 'if)  (list (quote ~non-meta-args) code#)
-              :else 
-              (list (quote ~non-meta-args) 
-                    (list 'try 
-                      (concat (list code#) (quote ~non-meta-args))
-                      ;(list code# (list ~@non-meta-args))
-                      (list 'catch 'Exception (gensym) nil)))) ]
-
-        (swap! ~'DISPATCHMAP update-in [var-key# ~arity] conj {:compiled arity-fn#})
-         
-        (let [dmap# (get ~dispatchmap var-key#)
-              invoke#
-              (cons 'fn  
-                (map
-                 #(or (get-in dmap# [% :compiled]) 
-                      (get ~'blank-arity-forms %)) 
-                  (range 10)))]
-
-          ;(prn dmap#)
-          (swap! ~'_INVOKATIONS_ conj {var-key# invoke#})
-          (fn [& args#] 
-            (prn (get ~'@_INVOKATIONS_ var-key#))
-            (let [f# (get ~'@_INVOKATIONS_ var-key#)]
-              (prn f#)
-              (if (not (nil? f#)) 
-                (str f#);(apply f# args#)
-                ))
-            ))
-        )))

@@ -1,29 +1,13 @@
 (ns ^:figwheel-always 
  pdf.core
   (:require-macros
-    [pdf.core :refer [defpdf pdf hashed-form CLEAN]])
+    [pdf.core :refer [defpdf pdf CLEAN]])
   (:require 
-    [clojure.walk]
-    [clojure.string]
-    [cljs.pprint :as pprint]))
+    [cljs.pprint :as pprint]
+    [cljs.test :refer-macros [deftest is testing run-tests]]))
     
 
- 
-
-
-
-(def _D (atom {})) 
-
-(def _H (atom {}))
-
-(defn unique-get [h v] 
-  (or (get @_H (hash h))
-      (do (swap! _H conj {(hash h) v}) 
-          v)))
-
 (CLEAN)
-
-
 
 
 (defpdf joe)
@@ -68,6 +52,12 @@
 (pdf maxim [^non-number? a ^non-number? b] :numeric-err)
  
 
+(deftest var-binding
+  (defpdf t01)
+  (is (= (fn? t01) true)))
 
+(deftest method-binding
+  (declare t03)
+  (is (= (fn? (pdf t03 [])) true)))
 
-
+(run-tests) 
