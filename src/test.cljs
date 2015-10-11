@@ -8,7 +8,7 @@
 
 (def non-number? (not* number?))
 (def thing (and* map? :name))
-
+ 
  
 (deftest var-binding
   (defpdf t01)
@@ -73,8 +73,8 @@
   (pdf slice [^map? col a]
     (into {} (slice (seq col) a)))
 
-  (pdf slice [^vector? col a]
-    (into [] (slice (seq col) a)))
+  (pprint (macroexpand '(pdf slice [^vector? col a]
+    (into [] (slice (seq col) a)))))
 
   (is (= (run-fn slice [[[0 1 2 3 4 5 6 7] -5 100][{:a 1 :b 2 :c 3} -2 2]["abcdefg" 3]["abcdefg" -4]["abcdefg" 1 3]["abcdefg" -5 7]["abcdefg" -5 -2]])
          [[3 4 5 6 7] {:b 2, :c 3} "abc" "defg" "a" "cdefg" "cde"]))
