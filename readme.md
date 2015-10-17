@@ -1,5 +1,9 @@
 # predicate dispatch
 
+```clj
+[selfsame/pdf "0.0.9-SNAPSHOT"]
+```
+
 > _a multimethod style macro for compiling core.match style conditional dispatching for ordered methods with predicate:argument patterns_
 
 Many languages have dispatching based on both arity and argument type.  Predicate dispatching is a similar system where methods define unary predicate patterns to be invoked on the arguments.  When the results of applying the predicates to the args are truthy the method is validated and called.
