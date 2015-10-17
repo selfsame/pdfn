@@ -1,0 +1,24 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "src"
+		}
+	],
+	"syntax_override":
+	{
+		"\\.clj$":
+		[
+			"Clojure",
+			"Clojure"
+		],
+		"\\.cljc$":
+		[
+			"Clojure",
+			"Clojure"
+		]
+	}
+}

@@ -1,0 +1,2825 @@
+Figwheel: focusing on build-ids (dev)
+Figwheel: focusing on build-ids (dev)
+Figwheel: focusing on build-ids (dev)
+Figwheel: focusing on build-ids (dev)
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: tile at line 24 is being replaced at line 25 src\pdf\test.cljc
+WARNING: tile at line 25 is being replaced at line 26 src\pdf\test.cljc
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src\pdf\test.cljc
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3138.invoke (compiler.cljc:1344)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1306)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1381)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3582$fn__3583.invoke (closure.clj:478)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    cljs.closure$eval3595$fn__3596.invoke (closure.clj:492)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1674)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: tile at line 24 is being replaced at line 25 src\pdf\test.cljc
+WARNING: tile at line 25 is being replaced at line 26 src\pdf\test.cljc
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src\pdf\test.cljc
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3138.invoke (compiler.cljc:1344)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1306)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1381)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3582$fn__3583.invoke (closure.clj:478)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    cljs.closure$eval3595$fn__3596.invoke (closure.clj:492)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1674)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: tile at line 24 is being replaced at line 25 src\pdf\test.cljc
+WARNING: tile at line 25 is being replaced at line 26 src\pdf\test.cljc
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src\pdf\test.cljc
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3138.invoke (compiler.cljc:1344)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1306)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1381)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3582$fn__3583.invoke (closure.clj:478)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    cljs.closure$eval3595$fn__3596.invoke (closure.clj:492)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1674)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: tile at line 24 is being replaced at line 25 src\pdf\test.cljc
+WARNING: tile at line 25 is being replaced at line 26 src\pdf\test.cljc
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src\pdf\test.cljc
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3138.invoke (compiler.cljc:1344)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1306)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1381)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3582$fn__3583.invoke (closure.clj:478)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    cljs.closure$eval3595$fn__3596.invoke (closure.clj:492)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1674)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 4.08 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.184 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.165 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.064 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.08 seconds.[0m
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.082 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.075 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.165 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.276 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.809 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.093 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.09 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.072 seconds.[0m
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.07 seconds.[0m
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.088 seconds.[0m
+notifying browser that file changed:  \pdf\core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.167 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.163 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.159 seconds.[0m
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.154 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.215 seconds.[0m
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.156 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 1.302 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 1.606 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.189 seconds.[0m
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.35 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \figwheel\connect.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.289 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \figwheel\connect.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.269 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \figwheel\connect.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.269 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \figwheel\connect.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.278 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \figwheel\connect.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.177 seconds.[0m
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.163 seconds.[0m
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.167 seconds.[0m
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.134 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Required namespace not provided for pdf.core
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.129 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Required namespace not provided for clojure.pprint
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.184 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src\pdf\core.cljc
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3138.invoke (compiler.cljc:1344)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1306)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1381)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3582$fn__3583.invoke (closure.clj:478)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    cljs.closure$eval3595$fn__3596.invoke (closure.clj:492)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1674)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.52 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \figwheel\connect.js
+notifying browser that file changed:  \pdf\core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.16 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.24 seconds.[0m
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.Exception: Unsupported option(s) supplied: :include-macros, compiling:(\pdf\core.cljc:1:1)
+ at clojure.core$throw_if.doInvoke (core.clj:5630)
+    clojure.lang.RestFn.invoke (RestFn.java:425)
+    clojure.core$load_libs.doInvoke (core.clj:5742)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invoke (core.clj:632)
+    clojure.core$require.doInvoke (core.clj:5832)
+    clojure.lang.RestFn.invoke (RestFn.java:436)
+    pdf.core$eval19958$loading__5340__auto____19959.invoke (\pdf\core.cljc:1)
+    pdf.core$eval19958.invoke (\pdf\core.cljc:1)
+    clojure.lang.Compiler.eval (Compiler.java:6782)
+    clojure.lang.Compiler.eval (Compiler.java:6771)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src\pdf\core.cljc
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3138.invoke (compiler.cljc:1344)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1306)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1381)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3582$fn__3583.invoke (closure.clj:478)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    cljs.closure$eval3595$fn__3596.invoke (closure.clj:492)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1674)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src\pdf\core.cljc
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3138.invoke (compiler.cljc:1344)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1306)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1381)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3582$fn__3583.invoke (closure.clj:478)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    cljs.closure$eval3595$fn__3596.invoke (closure.clj:492)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1674)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src\pdf\core.cljc
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3138.invoke (compiler.cljc:1344)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1306)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1381)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3582$fn__3583.invoke (closure.clj:478)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    cljs.closure$eval3595$fn__3596.invoke (closure.clj:492)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1674)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: No such var: clojure.core/require-macros, compiling:(\pdf\core.cljc:1:1)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3737)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$TryExpr$Parser.parse (Compiler.java:2261)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3737)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.eval (Compiler.java:6779)
+    clojure.lang.Compiler.eval (Compiler.java:6771)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: No such var: clojure.core/require-macros, compiling:(\pdf\core.cljc:1:1)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3737)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$TryExpr$Parser.parse (Compiler.java:2261)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3737)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.eval (Compiler.java:6779)
+    clojure.lang.Compiler.eval (Compiler.java:6771)
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.775 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\macros.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalAccessError: *with* does not exist, compiling:(\pdf\test.cljc:1:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalAccessError: *with* does not exist, compiling:(\pdf\test.cljc:1:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalAccessError: *with* does not exist, compiling:(\pdf\test.cljc:1:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalAccessError: *with* does not exist, compiling:(\pdf\test.cljc:1:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalStateException: defpdf already refers to: #'pdf.macros/defpdf in namespace: pdf.core, compiling:(\pdf\core.cljc:98:1)
+ at clojure.lang.Compiler.analyzeSeq (Compiler.java:6730)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.eval (Compiler.java:6771)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalStateException: defpdf already refers to: #'pdf.macros/defpdf in namespace: pdf.core, compiling:(\pdf\core.cljc:98:1)
+ at clojure.lang.Compiler.analyzeSeq (Compiler.java:6730)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.eval (Compiler.java:6771)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.786 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.528 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.475 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.249 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\impl.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalStateException: re-def-sym already refers to: #'pdf.impl/re-def-sym in namespace: pdf.core, compiling:(\pdf\core.cljc:7:1)
+ at clojure.lang.Compiler.analyzeSeq (Compiler.java:6730)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalStateException: re-def-sym already refers to: #'pdf.impl/re-def-sym in namespace: pdf.core, compiling:(\pdf\core.cljc:7:1)
+ at clojure.lang.Compiler.analyzeSeq (Compiler.java:6730)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalStateException: re-def-sym already refers to: #'pdf.impl/re-def-sym in namespace: pdf.core, compiling:(\pdf\core.cljc:7:1)
+ at clojure.lang.Compiler.analyzeSeq (Compiler.java:6730)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 1.587 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.516 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.461 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.454 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: env& in this context, compiling:(\pdf\core.cljc:20:23)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: env$ in this context, compiling:(\pdf\core.cljc:20:3)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$LetExpr$Parser.parse (Compiler.java:6129)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:577)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.eval (Compiler.java:6771)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: env& in this context, compiling:(\pdf\core.cljc:20:3)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$LetExpr$Parser.parse (Compiler.java:6129)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:577)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.eval (Compiler.java:6771)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.462 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.23 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.44 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.427 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.416 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: def in this context, compiling:(\pdf\core.cljc:11:1)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3050)
+    clojure.lang.Compiler.analyze (Compiler.java:6532)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.eval (Compiler.java:6779)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalStateException: splice not in list, compiling:(\pdf\core.cljc:11:10)
+ at clojure.lang.Compiler.load (Compiler.java:7234)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: def in this context, compiling:(\pdf\core.cljc:12:1)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3050)
+    clojure.lang.Compiler.analyze (Compiler.java:6532)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.eval (Compiler.java:6779)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (0) passed to pdf.core/host! at line 12 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.425 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unexpected parameter, compiling:(\pdf\core.cljc:7:1)
+ at clojure.lang.Compiler.analyzeSeq (Compiler.java:6730)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:577)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.eval (Compiler.java:6771)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unexpected parameter, compiling:(\pdf\core.cljc:7:1)
+ at clojure.lang.Compiler.analyzeSeq (Compiler.java:6730)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:577)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.eval (Compiler.java:6771)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unmatched delimiter: ], compiling:(\pdf\core.cljc:10:36)
+ at clojure.lang.Compiler.load (Compiler.java:7234)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unmatched delimiter: ], compiling:(\pdf\core.cljc:10:36)
+ at clojure.lang.Compiler.load (Compiler.java:7234)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: def in this context, compiling:(\pdf\core.cljc:12:1)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3050)
+    clojure.lang.Compiler.analyze (Compiler.java:6532)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.eval (Compiler.java:6779)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (0) passed to pdf.core/host! at line 12 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.437 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 12 src\pdf\core.cljc
+WARNING: Use of undeclared Var pdf.core/foo at line 12 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.442 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Use of undeclared Var pdf.core/foo at line 12 src\pdf\core.cljc
+WARNING: Use of undeclared Var pdf.core/foo at line 12 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.43 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Use of undeclared Var pdf.core/x at line 12 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.409 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.392 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalArgumentException: Wrong number of args passed to keyword: :clj, compiling:(\pdf\core.cljc:12:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: def in this context, compiling:(\pdf\core.cljc:12:1)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3050)
+    clojure.lang.Compiler.analyze (Compiler.java:6532)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.eval (Compiler.java:6779)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: def in this context, compiling:(\pdf\core.cljc:11:1)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3050)
+    clojure.lang.Compiler.analyze (Compiler.java:6532)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.eval (Compiler.java:6779)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: def in this context, compiling:(\pdf\core.cljc:11:1)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3050)
+    clojure.lang.Compiler.analyze (Compiler.java:6532)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.eval (Compiler.java:6779)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 11 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.416 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 11 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.401 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: clojure.lang.ArityException: Wrong number of args (2) passed to: core/host!, compiling:(\pdf\core.cljc:11:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: clojure.lang.ArityException: Wrong number of args (0) passed to: core/host!, compiling:(\pdf\core.cljc:11:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: clojure.lang.ArityException: Wrong number of args (3) passed to: core/host!, compiling:(\pdf\core.cljc:11:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 11 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.409 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (2) passed to pdf.core/host! at line 11 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.405 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.382 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.39 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.383 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.385 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.379 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+:clj-host![32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.399 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: enable-console-print! in this context, compiling:(\pdf\core.cljc:144:1)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3737)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.eval (Compiler.java:6779)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+:clj-host!
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.393 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.38 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.388 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src\pdf\test.cljc
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3138.invoke (compiler.cljc:1344)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1306)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1381)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3582$fn__3583.invoke (closure.clj:478)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    cljs.closure$eval3595$fn__3596.invoke (closure.clj:492)
+    cljs.closure$eval3534$fn__3535$G__3525__3542.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1674)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.391 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 148 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.395 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (2) passed to pdf.core/host! at line 148 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.398 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (2) passed to pdf.core/host! at line 148 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.39 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 148 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.388 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: clojure.lang.ArityException: Wrong number of args (2) passed to: core/host!, compiling:(\pdf\core.cljc:146:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: clojure.lang.ArityException: Wrong number of args (3) passed to: core/host!, compiling:(\pdf\core.cljc:146:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: clojure.lang.ArityException: Wrong number of args (4) passed to: core/host!, compiling:(\pdf\core.cljc:146:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 148 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.403 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 148 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.385 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 148 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 7.148 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.185 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 148 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.376 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 148 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.387 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.751 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.622 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Feature should be a keyword: (do (reset! HOST {:re-def-sym (quote set!)}) (prn :cljs-host! (clojure.core/deref HOST))), compiling:(\pdf\core.cljc:143:32)
+ at clojure.lang.Compiler.load (Compiler.java:7234)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.514 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.477 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.463 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.456 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (1) passed to pdf.core/host! at line 143 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.442 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.413 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.41 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.404 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Use of undeclared Var pdf.core/set! at line 143 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.422 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.41 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.409 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.394 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.384 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Use of undeclared Var pdf.core/set! at line 143 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.395 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.371 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.374 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.397 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.379 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.383 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.214 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.19 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.375 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Too many arguments to def, compiling:(\pdf\core.cljc:120:1)
+ at clojure.lang.Compiler.analyzeSeq (Compiler.java:6730)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: &env in this context, compiling:(\pdf\core.cljc:120:33)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$IfExpr$Parser.parse (Compiler.java:2772)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3737)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:577)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.378 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: qualify-here at line 8 is being replaced at line 20 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.38 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.38 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Use of undeclared Var pdf.core/resolve at line 13 src\pdf\core.cljc
+WARNING: Use of undeclared Var pdf.core/hosted at line 108 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.431 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Use of undeclared Var pdf.core/resolve at line 13 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.391 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: resolve already refers to: #'clojure.core/resolve in namespace: pdf.core, being replaced by: #'pdf.core/resolve
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.377 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: resolve already refers to: #'clojure.core/resolve in namespace: pdf.core, being replaced by: #'pdf.core/resolve
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.37 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: resolve already refers to: #'clojure.core/resolve in namespace: pdf.core, being replaced by: #'pdf.core/resolve
+WARNING: Use of undeclared Var pdf.core/HOST at line 7 src\pdf\core.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.401 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: resolve already refers to: #'clojure.core/resolve in namespace: pdf.core, being replaced by: #'pdf.core/resolve
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.372 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.205 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (def tile1_26607 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_26607 a)
+     (if ({[0 1 0 1] 1} a) (pdf.test/tile1_26597 a) :pdf.core/nf))))))
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.IllegalStateException: Attempting to call unbound fn: #'pdf.core/resolve, compiling:(\pdf\test.cljc:32:1)
+ at clojure.lang.Compiler.load (Compiler.java:7239)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+    clojure.core.async.impl.ioc_macros$run_state_machine.invoke (ioc_macros.clj:940)
+    clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke (ioc_macros.clj:944)
+    clojure.core.async$ioc_alts_BANG_$fn__9696.invoke (async.clj:362)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: ? in this context, compiling:(\pdf\core.cljc:1:184)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: ?# in this context, compiling:(\pdf\core.cljc:1:184)
+ at clojure.lang.Compiler.analyze (Compiler.java:6543)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler.eval (Compiler.java:6786)
+    clojure.lang.Compiler.load (Compiler.java:7227)
+    clojure.lang.RT.loadResourceScript (RT.java:371)
+    clojure.lang.RT.loadResourceScript (RT.java:362)
+    clojure.lang.RT.load (RT.java:446)
+    clojure.lang.RT.load (RT.java:412)
+    clojure.core$load$fn__5448.invoke (core.clj:5866)
+    clojure.core$load.doInvoke (core.clj:5865)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojurescript_build.core$reload_lib.invoke (core.clj:46)
+    clojurescript_build.core$handle_source_reloading_STAR_.invoke (core.clj:139)
+    clojurescript_build.core$handle_source_reloading.invoke (core.clj:145)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:158)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15733.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15779.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15730.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15533.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15539.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15542.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15536.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15554.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641$fn__15646.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15640$state_machine__9517__auto____15641.invoke (auto.clj:178)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (def tile1_26805 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_26805 a)
+     (if ({[0 1 0 1] 1} a) (pdf.test/tile1_26795 a) :pdf.core/nf))))))
+(do
+ (def joe2_26815 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_26815 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_26807 a b)
+      :pdf.core/nf))))))
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.488 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \user\core.js
+notifying browser that file changed:  \pdf\core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.982 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (def tile1_20599 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_20599 a)
+     (if ({[0 1 0 1] 1} a) (pdf.test/tile1_20589 a) :pdf.core/nf))))))
+(do
+ (def joe2_20609 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_20609 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_20601 a b)
+      :pdf.core/nf))))))
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.461 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: tile1_1099735098 at line 25 is being replaced at line 26 src\pdf\test.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.604 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: tile1_1099735098 at line 25 is being replaced at line 26 src\pdf\test.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.53 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: tile1_1099735098 at line 25 is being replaced at line 26 src\pdf\test.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.526 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.529 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.457 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.429 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.417 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.44 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+-
+(do
+ (declare joe2_-1809309275)
+ (def joe2_-1809309275 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_-1809309275 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1809309275 a b)
+      :pdf.core/nf))))))
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.267 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.424 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.438 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (declare tile1_1080192816)
+ (def tile1_1080192816 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_1080192816 a)
+     (if
+      ({[0 1 0 1] 1} a)
+      (pdf.test/tile1_1837235277 a)
+      :pdf.core/nf))))))
+(do
+ (declare joe2_479352162)
+ (def joe2_479352162 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_479352162 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1702159416 a b)
+      :pdf.core/nf))))))
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.289 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (declare tile1_1080192816)
+ (def tile1_1080192816 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_1080192816 a)
+     (if
+      ({[0 1 0 1] 1} a)
+      (pdf.test/tile1_1837235277 a)
+      :pdf.core/nf))))))
+(do
+ (declare joe2_479352162)
+ (def joe2_479352162 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_479352162 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1702159416 a b)
+      :pdf.core/nf))))))
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.279 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (declare tile1_1080192816)
+ (def tile1_1080192816 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_1080192816 a)
+     (if
+      ({[0 1 0 1] 1} a)
+      (pdf.test/tile1_1837235277 a)
+      :pdf.core/nf))))))
+(do
+ (declare joe2_479352162)
+ (def joe2_479352162 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_479352162 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1702159416 a b)
+      :pdf.core/nf))))))
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.278 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.916 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.15 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \turtle\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.678 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 1.025 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \turtle\core.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.685 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.524 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (declare tile1_1080192816)
+ (def tile1_1080192816 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_1080192816 a)
+     (if
+      ({[0 1 0 1] 1} a)
+      (pdf.test/tile1_1837235277 a)
+      :pdf.core/nf))))))
+(do
+ (declare joe2_479352162)
+ (def joe2_479352162 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_479352162 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1702159416 a b)
+      :pdf.core/nf))))))
+WARNING: Use of undeclared Var pdf.test/t08 at line 20 src\pdf\test.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.37 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (declare tile1_1080192816)
+ (def tile1_1080192816 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_1080192816 a)
+     (if
+      ({[0 1 0 1] 1} a)
+      (pdf.test/tile1_1837235277 a)
+      :pdf.core/nf))))))
+(do
+ (declare joe2_479352162)
+ (def joe2_479352162 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_479352162 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1702159416 a b)
+      :pdf.core/nf))))))
+WARNING: Use of undeclared Var pdf.test/t02 at line 20 src\pdf\test.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.344 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (declare tile1_1080192816)
+ (def tile1_1080192816 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_1080192816 a)
+     (if
+      ({[0 1 0 1] 1} a)
+      (pdf.test/tile1_1837235277 a)
+      :pdf.core/nf))))))
+(do
+ (declare joe2_479352162)
+ (def joe2_479352162 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_479352162 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1702159416 a b)
+      :pdf.core/nf))))))
+WARNING: Use of undeclared Var pdf.test/t02 at line 19 src\pdf\test.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.334 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+l
+(do
+ (declare tile1_1080192816)
+ (def tile1_1080192816 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_1080192816 a)
+     (if
+      ({[0 1 0 1] 1} a)
+      (pdf.test/tile1_1837235277 a)
+      :pdf.core/nf))))))
+(do
+ (declare joe2_479352162)
+ (def joe2_479352162 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_479352162 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1702159416 a b)
+      :pdf.core/nf))))))
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.309 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+(do
+ (declare tile1_1080192816)
+ (def tile1_1080192816 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_1080192816 a)
+     (if
+      ({[0 1 0 1] 1} a)
+      (pdf.test/tile1_1837235277 a)
+      (pdf.test/tile1_-2113779599 a)))))))
+(do
+ (declare joe2_479352162)
+ (def joe2_479352162 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_479352162 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1702159416 a b)
+      :pdf.core/nf))))))
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.322 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+(do
+ (declare tile1_1080192816)
+ (def tile1_1080192816 (fn [a] '-))
+ (def
+  tile
+  (fn
+   ([a]
+    (if
+     ({[1 0 1 0] 1} a)
+     (pdf.test/tile1_1080192816 a)
+     (if
+      ({[0 1 0 1] 1} a)
+      (pdf.test/tile1_1837235277 a)
+      (pdf.test/tile1_-2113779599 a)))))))
+(do
+ (declare joe2_479352162)
+ (def joe2_479352162 (fn [a b] :ab))
+ (def
+  joe
+  (fn
+   ([a b]
+    (if
+     (and (pdf.test/nonzero? a) (:thing b))
+     (pdf.test/joe2_479352162 a b)
+     (if
+      (and
+       (clojure.core/odd? a)
+       ((pdf.core/and* :thing clojure.core/map?) b))
+      (pdf.test/joe2_-1702159416 a b)
+      :pdf.core/nf))))))
+[\space \| \-]
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.301 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.252 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.241 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.249 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.449 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.433 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+notifying browser that file changed:  \pdf\core.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.27 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.272 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[31mCompiling "resources/public/js/compiled/main.js" failed.[0m
+clojure.lang.Compiler$CompilerException: clojure.lang.ArityException: Wrong number of args (3) passed to: core/for, compiling:(\pdf\test.cljc:41:6)
+ at clojure.lang.Compiler.analyzeSeq (Compiler.java:6730)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3791)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6725)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:5861)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5296)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3925)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6721)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6711)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3050)
+    clojure.lang.Compiler.analyze (Compiler.java:6532)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:576)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6723)
+    clojure.lang.Compiler.analyze (Compiler.java:6524)
+    clojure.lang.Compiler.analyze (Compiler.java:6485)
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+WARNING: Wrong number of args (3) passed to cljs.core/vec at line 45 src\pdf\test.cljc
+WARNING: Wrong number of args (3) passed to cljs.core/vec at line 45 src\pdf\test.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.467 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+([32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.424 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+(\space \space \| \space \space \space \space \space \space \space \space \space \space \space \space \space)
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.417 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+(\space \space \| \space \space [0 [1 1 1 1]] \space [0 [1 1 nil 0]] [0 [1 nil 1 1]] \space [0 [1 1 0 1]] [0 [0 0 nil 0]] \space [0 [1 1 1 nil]] \space [0 [0 1 nil nil]])
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.432 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+
+.──.
+│ . 
+│.  
+. . WARNING: Use of undeclared Var pdf.test/printf at line 50 src\pdf\test.cljc
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.463 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+"\n┌┬┬.\n├┼. \n├. .\n. . "
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.507 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+"\n┌┬┬.\n├┼. \n├. .\n. . "
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.57 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+"\n┌┬┬.\n├┼. \n├. .\n. . "
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.443 seconds.[0m
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+"\n┌┬┬.\n├┼. \n├. .\n. . "
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.464 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+"\n┌┬┬.\n├┼. \n├. .\n. . "
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.438 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  \pdf\test.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.115 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+[0mCompiling "resources/public/js/compiled/main.js" from ["src"]...
+[32mSuccessfully compiled "resources/public/js/compiled/main.js" in 0.104 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js

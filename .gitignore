@@ -1,1 +1,14 @@
-*.meta
+/target
+/classes
+/checkouts
+/resources/public/js/compiled
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/.lein-*
+/.nrepl-port
+.hgignore
+.hg/
+/.log
+.sublime-*
