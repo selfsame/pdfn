@@ -2,7 +2,7 @@
   :description "Predicate dispatch for Clojure(Script)."
   :url "http://github.com/selfsame/pdf"
   :license {:name "The MIT License (MIT)"
-            :url "https://github.com/selfsame/pdf/blob/master/LICENSE"
+            :url "https://github.com/selfsame/pdf/blob/master/LICENSE"}
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.122"]]
   :main pdf.core
