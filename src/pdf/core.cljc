@@ -4,6 +4,15 @@
 (def ^:dynamic *inline* true)
 (def ^:dynamic *qualify-defs* true)
 
+(def ^:private DISPATCHMAP (atom {}))
+(def ^:private argsyms (mapv (comp symbol str) "abcdefghijklmnopqrstuvwxyz"))
+
+;composition
+(def and* every-pred)
+(def not* (fn [& args] (complement (apply and* args))))
+(def or* (fn [& args] (fn [v] (not (empty? (filter #(% v) args))))))
+(defn is* [v] #(= v %))
+
 ;host specific
 #?(:cljs (declare resolve))
 (def HOST (atom {
@@ -24,24 +33,12 @@
     :get-ns-name
     (fn [sym env]
      (or (:name (first (map #(get (% (:ns env)) sym) [:defs :use]))) sym)) }}))
+
 (defn- cljs? [env] (boolean (:ns env)))
+
 (defn- hosted [kw env] (kw ((if (cljs? env) :cljs :clj) @HOST)))
 
-
-
-;composition
-(def and* every-pred)
-(def not* (fn [& args] (complement (apply and* args))))
-(def or* (fn [& args] (fn [v] (not (empty? (filter #(% v) args))))))
-(defn is* [v] #(= v %))
-
-(def ^:private DISPATCHMAP (atom {}))
-
-(def ^:private argsyms (mapv (comp symbol str) "abcdefghijklmnopqrstuvwxyz"))
-
-
-
-
+;implementation
 (defn- grid-get [col & more] (get-in col (vec (cons :cols more))))
 
 (defn- make-grid [data]
@@ -79,25 +76,25 @@
           -leaf (get (:leafs g) 0)
           leaf (if (#{::body} (first -leaf)) 
                    (vec (cons (last -leaf) (:args g)))
-                   (if (empty? (rest -leaf))                                                        ;count-dispatch
+                   (if (empty? (rest -leaf))
                        (list (first -leaf))
                        (cons 'do -leaf)))
           dups (duplicate-idxs (grid-get g 0))]
       (cond (nil? (grid-get g 0 0)) leaf
-            (empty? (rest dups))                                                                    ;count-dispatch
+            (empty? (rest dups))
             (let [conds (take-while #(not (nil? (first %))) 
                                      (map (comp seq (juxt first last)) (:cols g)))
-                  fconds (if (= 1 (count conds)) (first conds) (cons 'and conds))]                  ;count-dispatch
-              (if (empty? conds) leaf                                                               ;count-dispatch
+                  fconds (if (= 1 (count conds)) (first conds) (cons 'and conds))]
+              (if (empty? conds) leaf
                 ['if fconds leaf (grid->ast (grid-drop-idxs g [0]))] ))
         :else 
-        ['if ((juxt (comp list first) last) (first (:cols g)))                                      ;[(p?) b]
-             (grid->ast (update-in g [:cols 0] #(update-idxs % dups (fn [_] nil))))                 ;success - rewrite p as nil
-             (grid->ast (grid-drop-idxs g dups))]))))                                              ;failure - discard rows with p
+        ['if ((juxt (comp list first) last) (first (:cols g)))                       ;[(p?) b]
+             (grid->ast (update-in g [:cols 0] #(update-idxs % dups (fn [_] nil))))  ;success - rewrite p as nil
+             (grid->ast (grid-drop-idxs g dups))]))))                                ;failure - discard rows with p
 
 (defn- ast->code [form] 
   (cond (vector? form) (seq (clojure.walk/walk ast->code identity form))
-        (list? form) (first form)                                                                   ;a list in the ast is a quotation of sorts
+        (list? form) (first form)                                                     ;a list in the ast is a quotation of sorts
         :else form))
 
 (defn- datatype? [v] (or (sequential? v) (set? v) (map? v)))
@@ -126,7 +123,9 @@
 
 (defmacro pdf [sym args & more] 
   (let [inline (or (:inline (meta sym)) *inline*)
-        [spec code] (if (map? (first more)) [(first more)(rest more)] [{} more])                    ;TODO - single map body should be ignored (like defn)
+        [spec code] (if (and (map? (first more)) (rest more)) 
+                        [(first more)(rest more)] 
+                        [{} more])  
         -preds (mapv #(user-meta (meta %) &env) args)
         unmeta-args (mapv #(with-meta % nil) args)
         preds (mapv #(qualify-walk (or %1 %2) &env)
