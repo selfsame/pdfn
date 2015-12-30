@@ -1,13 +1,15 @@
-(ns pdf.test
-#?( :cljs (:require [pdf.core :refer [and* or* not*] :refer-macros [defpdf pdf *with*]]
+(ns ^:figwheel-always pdf.test
+#?( :cljs (:require [pdf.core :refer [and* or* not*] :refer-macros [defpdf pdf *inline*]]
                     [cljs.test :refer-macros [deftest is testing run-tests]]))
 #?( :cljs (:use [cljs.pprint :only [pprint]])
-    :clj  (:use [pdf.core :only [and* not* or* *with* defpdf pdf]]
+    :clj  (:use [pdf.core :only [and* not* or* *inline* defpdf pdf]]
                 [clojure.test :only [deftest is testing run-tests]]
                 [clojure.pprint :only [pprint]])))
 
+#?(:cljs (enable-console-print!))
+
 (defn run-fn [f col] (mapv #(apply f %) col))
- 
+
 (def non-number? (not* number?))
 (def thing (and* map? :name))
  
@@ -26,33 +28,23 @@
   (pdf tile [a b] " ")
   (pdf tile [^pos? value data]
     (apply tile data))
-(comment 
-'─
-'│
-'┐
-'└
-'┘
-'┌
-'├
-'┤
-'┬
-'┴
-'┼)
-  (pdf tile [n  w  e      s] '.)
-  (pdf tile [^? n  w e ^? s] '│)
-  (pdf tile [ n ^? w ^? e s] '-)
-  (pdf tile [ n w ^? e ^? s] '┌)
-  (pdf tile [^? n w ^? e ^? s] '├)
-  (pdf tile [ n ^? w ^? e ^? s] '┬)
+
+  (pdf tile [   n    w    e    s] '.)
+  (pdf tile [^? n    w    e    s] '|)
+  (pdf tile [^? n    w    e ^? s] '│)
+  (pdf tile [   n ^? w ^? e    s] '-)
+  (pdf tile [   n    w ^? e ^? s] '┌)
+  (pdf tile [^? n    w ^? e ^? s] '├)
+  (pdf tile [   n ^? w ^? e ^? s] '┬)
   (pdf tile [^? n ^? w ^? e ^? s] '┼)
 
   (def level 
 [[1 1 1 1]
- [1 1 1 0]
+ [1 0 1 0]
  [1 1 0 1]
  [1 0 1 0]])
  
-(prn (apply str (mapv (comp #(apply str (concat ["\n"] %)) vec) (partition 4 (mapv #(apply tile %) 
+(print (apply str (mapv (comp #(apply str (concat ["\n"] %)) vec) (partition 4 (mapv #(apply tile %) 
 (vec (for 
   [y (range (count level))
    x (range (count (first level)))]
@@ -69,7 +61,7 @@
   (is (= ["|" "-"]))
         (run-fn tile [[1 [0 1 0 1]][1 [1 0 1 0]]]))
 
-
-(run-tests)
+(prn (t07))
+(run-tests) 
 
  

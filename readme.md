@@ -153,8 +153,9 @@ Each method is bound to a unique ```gen-sym```, which is called in the dispatch 
 
 You may want to inline the method bodies for optimization or readability, by either:
 
-* using a meta tag ```(pdf ^:inline foo [] :bar)```
-* setting a compiler options by requiring ```[pdf.core :refer-macros [*with*]]``` and inserting ```(*with* :inline true)``` before the method defs.
+* pdf.core/*inline*
+* using a meta tag on individual methods ```(pdf ^:inline foo [] :bar)```
+
 
 _NOTE inlined method code has it's arguments transformed to match the dispatch arg symbols_
 

@@ -9,16 +9,16 @@
   :source-paths ["src"]
   :plugins [[lein-cljsbuild "1.1.0"]
             [lein-figwheel "0.4.0"]]
+  :jar-exclusions [#"test" #"resources"]
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
   :cljsbuild {
     :builds [{:id "dev"
-              :source-paths ["src"]
-              :figwheel { :on-jsload "pdf.core/on-js-reload" }
+              :source-paths ["src" "test"]
+              :figwheel {}
               :compiler {:main pdf.core
                          :asset-path "js/compiled/out"
                          :output-to "resources/public/js/compiled/main.js"
                          :output-dir "resources/public/js/compiled/out"
                          :source-map-timestamp true }}]}
-  :figwheel {:load-warninged-code true}
-)
+  :figwheel {:load-warninged-code true})
