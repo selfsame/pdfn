@@ -1,6 +1,9 @@
 (ns pdf.core
   (:require [clojure.walk :as walk]))
 
+(def ^:dynamic *inline* true)
+(def ^:dynamic *qualify-defs* true)
+
 ;host specific
 #?(:cljs (declare resolve))
 (def HOST (atom {
@@ -9,17 +12,17 @@
     :qualify-here 
     (fn [usym env] (symbol (str (.name *ns*) '/ usym)))
     :get-ns-name
-    (fn [sym env opts]
+    (fn [sym env]
      (let [[_ spc nam] (re-find #"^[#]\'([^\/]+)[\/](.*)"  (str (resolve (symbol (str sym)))))]
         (cond (nil? spc) (symbol nam) 
-              (:qualify-defs opts) (symbol (str spc '/ nam))
+              *qualify-defs* (symbol (str spc '/ nam))
               :else (symbol nam))))}
   :cljs {
     :re-def-sym 'set!
     :qualify-here 
     (fn [usym env] (symbol (str (:name (:ns env)) '/ usym)))
     :get-ns-name
-    (fn [sym env opts]
+    (fn [sym env]
      (or (:name (first (map #(get (% (:ns env)) sym) [:defs :use]))) sym)) }}))
 (defn- cljs? [env] (boolean (:ns env)))
 (defn- hosted [kw env] (kw ((if (cljs? env) :cljs :clj) @HOST)))
@@ -30,14 +33,12 @@
 (def and* every-pred)
 (def not* (fn [& args] (complement (apply and* args))))
 (def or* (fn [& args] (fn [v] (not (empty? (filter #(% v) args))))))
+(defn is* [v] #(= v %))
 
 (def ^:private DISPATCHMAP (atom {}))
-(def ^:private options (atom {:qualify-defs true 
-                              :qualify-core true
-                              :gensyms false}))
+
 (def ^:private argsyms (mapv (comp symbol str) "abcdefghijklmnopqrstuvwxyz"))
 
-(defmacro ^:dynamic *with* [k v] (swap! options #(conj % {k v})))
 
 
 
@@ -102,7 +103,7 @@
 (defn- datatype? [v] (or (sequential? v) (set? v) (map? v)))
 
 (defn- qualify-walk [form env]
-  (cond (symbol? form) ((hosted :get-ns-name env) form env @options)
+  (cond (symbol? form) ((hosted :get-ns-name env) form env)
         (datatype? form) (clojure.walk/walk #(qualify-walk % env) identity form)
         :else form))
 
@@ -124,7 +125,7 @@
  `(defn ~sym [& args#]))
 
 (defmacro pdf [sym args & more] 
-  (let [inline (or (:inline (meta sym)) (:inline @options))
+  (let [inline (or (:inline (meta sym)) *inline*)
         [spec code] (if (map? (first more)) [(first more)(rest more)] [{} more])                    ;TODO - single map body should be ignored (like defn)
         -preds (mapv #(user-meta (meta %) &env) args)
         unmeta-args (mapv #(with-meta % nil) args)
@@ -146,4 +147,4 @@
          (~re-def-sym ~usym (~'fn ~unmeta-args ~@code))
          (~re-def-sym ~sym ~compiled)))))
 
- 
+
