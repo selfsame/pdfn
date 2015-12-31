@@ -1,7 +1,7 @@
 (ns ^:figwheel-always pdf.test
-#?( :cljs (:require [pdf.core :refer [and* or* not*] :refer-macros [defpdf pdf *inline*]]
+#?( :cljs (:require [pdf.core :refer [and* or* not*] :refer-macros [defpdf pdf set!!]]
                     [cljs.test :refer-macros [deftest is testing run-tests]]))
-#?( :cljs (:use [cljs.pprint :only [pprint]])
+#?( :cljs (:use [cljs.pprint :only [pprint write code-dispatch]])
     :clj  (:use [pdf.core :only [and* not* or* *inline* defpdf pdf]]
                 [clojure.test :only [deftest is testing run-tests]]
                 [clojure.pprint :only [pprint]])))
@@ -22,9 +22,8 @@
   (is (= (fn? (pdf t07 [])) false)))
  
 (deftest behaviour-1
-  (defpdf tile)
   (def ? (fn [v] (= 1 v)))
-
+  (defpdf ^{:inline true} tile)
   (pdf tile [a b] " ")
   (pdf tile [^pos? value data]
     (apply tile data))
@@ -61,7 +60,47 @@
   (is (= ["|" "-"]))
         (run-fn tile [[1 [0 1 0 1]][1 [1 0 1 0]]]))
 
-(prn (t07))
+
 (run-tests) 
 
- 
+#?(:clj 
+
+(do 
+    (defpdf frog)
+    (pdf frog [a b] :1)
+    (pdf frog [a b c d e] :5)
+    (pprint (macroexpand '(pdf ^{:inline true} frog [a b c d e] :5))))
+
+:cljs
+(do 
+    (defpdf ^{:inline false :stub-arity 10 :qualify-syms false}  frog)
+    (pdf frog [a b] :1)
+    (pdf ^:inline  frog [^number? a ^frog b c d e] (list frog))
+    (write (macroexpand '(pdf tile [^? n ^? w ^? e ^? s] '┼) #_(pdf frog [a b c d e u i o p v n m j k w] :5))
+      :dispatch code-dispatch
+      ))
+)
+
+
+
+(fn ([a b] (if (pos? a) (apply tile b) " "))
+   ([a b c d]
+     (if (? c)
+       (if (? d)
+         (if (? a) (if (? b) '┼ '├) (if (? b) '┬ '┌))
+         (if (? b) '- (if (? a) '| '.)))
+       (if (? a) (if (? d) '│ '|) '.))))
+
+(fn ([a b] (if (pos? a) (apply tile b) " "))
+    ([a b c d]
+      (if (and
+            (pdf.test/? c)
+            (pdf.test/? d)
+            (pdf.test/? a)
+            (pdf.test/? b))
+        '┼
+        (if (? c)
+          (if (? d)
+            (if (? a) (if (? b) '┼ '├) (if (? b) '┬ '┌))
+            (if (? b) '- (if (? a) '| '.)))
+          (if (? a) (if (? d) '│ '|) '.)))))
