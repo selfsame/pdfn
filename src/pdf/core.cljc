@@ -1,44 +1,34 @@
-(ns pdf.core
+(ns pdf.core 
   (:require [clojure.walk :as walk]))
 
-(def ^:dynamic *inline* true)
-(def ^:dynamic *qualify-defs* true)
-
 (def ^:private DISPATCHMAP (atom {}))
+(def ^:private METAMAP (atom {}))
 (def ^:private argsyms (mapv (comp symbol str) "abcdefghijklmnopqrstuvwxyz"))
 
-;composition
 (def and* every-pred)
 (def not* (fn [& args] (complement (apply and* args))))
 (def or* (fn [& args] (fn [v] (not (empty? (filter #(% v) args))))))
 (defn is* [v] #(= v %))
 
-;host specific
+(defn- opt [sym kw] (get (meta sym) kw (get-in @METAMAP [sym kw])))
+
 #?(:cljs (declare resolve))
-(def HOST (atom {
-  :clj  {
-    :re-def-sym 'def
-    :qualify-here 
-    (fn [usym env] (symbol (str (.name *ns*) '/ usym)))
-    :get-ns-name
-    (fn [sym env]
-     (let [[_ spc nam] (re-find #"^[#]\'([^\/]+)[\/](.*)"  (str (resolve (symbol (str sym)))))]
-        (cond (nil? spc) (symbol nam) 
-              *qualify-defs* (symbol (str spc '/ nam))
-              :else (symbol nam))))}
-  :cljs {
-    :re-def-sym 'set!
-    :qualify-here 
-    (fn [usym env] (symbol (str (:name (:ns env)) '/ usym)))
-    :get-ns-name
-    (fn [sym env]
-     (or (:name (first (map #(get (% (:ns env)) sym) [:defs :use]))) sym)) }}))
 
-(defn- cljs? [env] (boolean (:ns env)))
+(def ^:private HOST (atom {
+  :clj {:re-def-sym 'def
+        :qualify-here (fn [usym env] (symbol (str (.name *ns*) '/ usym)))
+        :get-ns-name 
+        (fn [sym env]
+          (let [[_ spc nam] (re-find #"^[#]\'([^\/]+)[\/](.*)"  (str (resolve (symbol (str sym)))))]
+            (cond (nil? spc) (symbol nam) 
+                  (opt sym :qualify-syms) (symbol (str spc '/ nam))
+                  :else (symbol nam))))}
+  :cljs {:re-def-sym 'set!
+         :qualify-here (fn [usym env] (symbol (str (:name (:ns env)) '/ usym)))
+         :get-ns-name  (fn [sym env] sym #_(or (:name (first (map #(get (% (:ns env)) sym) [:defs :use]))) sym) )}}))
 
-(defn- hosted [kw env] (kw ((if (cljs? env) :cljs :clj) @HOST)))
+(defn- hosted [kw env] (kw ((if (boolean (:ns env)) :cljs :clj) @HOST)))
 
-;implementation
 (defn- grid-get [col & more] (get-in col (vec (cons :cols more))))
 
 (defn- make-grid [data]
@@ -71,7 +61,7 @@
         (assoc :cols (mapv #(drop-idxs % idxs) (:cols g)))))
  
 (defn- grid->ast [-g]
-  (if (empty? (butlast (grid-get -g 0))) ::nf
+  (if (empty? (butlast (grid-get -g 0))) :nf
     (let [g (sort-grid -g score)
           -leaf (get (:leafs g) 0)
           leaf (if (#{::body} (first -leaf)) 
@@ -86,26 +76,25 @@
                                      (map (comp seq (juxt first last)) (:cols g)))
                   fconds (if (= 1 (count conds)) (first conds) (cons 'and conds))]
               (if (empty? conds) leaf
-                ['if fconds leaf (grid->ast (grid-drop-idxs g [0]))] ))
-        :else 
-        ['if ((juxt (comp list first) last) (first (:cols g)))                       ;[(p?) b]
-             (grid->ast (update-in g [:cols 0] #(update-idxs % dups (fn [_] nil))))  ;success - rewrite p as nil
-             (grid->ast (grid-drop-idxs g dups))]))))                                ;failure - discard rows with p
+                  ['if fconds leaf (grid->ast (grid-drop-idxs g [0]))]))
+            :else ['if ((juxt (comp list first) last) (first (:cols g)))                       ;[(p?) b]
+                       (grid->ast (update-in g [:cols 0] #(update-idxs % dups (fn [_] nil))))  ;success - rewrite p as nil
+                       (grid->ast (grid-drop-idxs g dups))]))))                                ;failure - discard rows with p
 
 (defn- ast->code [form] 
   (cond (vector? form) (seq (clojure.walk/walk ast->code identity form))
-        (list? form) (first form)                                                     ;a list in the ast is a quotation of sorts
+        (list? form)   (first form)                                                            ;list in the ast is a quotation
         :else form))
 
 (defn- datatype? [v] (or (sequential? v) (set? v) (map? v)))
 
 (defn- qualify-walk [form env]
-  (cond (symbol? form) ((hosted :get-ns-name env) form env)
+  (cond (symbol? form)   ((hosted :get-ns-name env) form env)
         (datatype? form) (clojure.walk/walk #(qualify-walk % env) identity form)
         :else form))
 
 (defn- symbol-walk [form xform]
-  (cond (symbol? form) (get xform form form)
+  (cond (symbol? form)   (get xform form form)
         (datatype? form) (clojure.walk/walk #(symbol-walk % xform) identity form)
         :else form))
 
@@ -118,32 +107,33 @@
         res))))
 
 (defmacro defpdf [sym & more]
-  (swap! DISPATCHMAP dissoc (symbol sym)) 
+  (swap! DISPATCHMAP dissoc (symbol sym))
+  (swap! METAMAP assoc (symbol sym) (meta sym)) 
  `(defn ~sym [& args#]))
 
 (defmacro pdf [sym args & more] 
-  (let [inline (or (:inline (meta sym)) *inline*)
+  (let [inline      (opt sym :inline)
+        stub-arity  (opt sym :stub-arity)
         [spec code] (if (and (map? (first more)) (rest more)) 
                         [(first more)(rest more)] 
                         [{} more])  
-        -preds (mapv #(user-meta (meta %) &env) args)
+        -preds      (mapv #(user-meta (meta %) &env) args)
         unmeta-args (mapv #(with-meta % nil) args)
-        preds (mapv #(qualify-walk (or %1 %2) &env)
-                     (map #(get spec % nil) args) -preds)
-        usym (symbol (str sym (count args) '_ (hash `(quote ~preds))))
+        preds       (mapv #(qualify-walk (or %1 %2) &env)
+                      (map #(get spec % nil) args) -preds)
+        usym        (symbol (str sym (count args) '_ (hash `(quote ~preds))))
         _ (swap! DISPATCHMAP update-in [sym (count args)] #(conj (or % {}) 
             {preds (if inline (symbol-walk code (zipmap unmeta-args argsyms))
-                              [::body ((hosted :qualify-here &env) usym &env)])}))               
-        compiled (cons 'fn (map 
-                    (fn [[arity-count data]]
-                      (list (vec (take arity-count argsyms)) 
-                            (ast->code (grid->ast (make-grid data)))))
-                    (get @DISPATCHMAP sym)))
+                              [::body ((hosted :qualify-here &env) usym &env)])}))             
+        compiled    (cons 'fn (map 
+                      (fn [[arity-count data]]
+                        (list (vec (take arity-count argsyms)) 
+                              (ast->code (grid->ast (make-grid data)))))
+                      (sort (conj (zipmap (range (get {true 10 false 0 nil 0} stub-arity stub-arity)) (repeat nil))
+                                  (get @DISPATCHMAP sym)))))
         re-def-sym (hosted :re-def-sym &env)]
   (if inline 
     `(~re-def-sym ~sym ~compiled)
     `(do (~'declare ~usym)
          (~re-def-sym ~usym (~'fn ~unmeta-args ~@code))
          (~re-def-sym ~sym ~compiled)))))
-
-
