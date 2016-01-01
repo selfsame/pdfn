@@ -35,8 +35,7 @@
   (pdf tile [^? n    w ^? e ^? s] 'K)
   (pdf tile [   n ^? w ^? e ^? s] 'T)
   (pdf tile [^? n ^? w ^? e ^? s] '+)
-  (inspect tile)
-
+  
   (is (= ['T '- '+]
         (run-fn tile [
           [0 1 1 1]

@@ -12,8 +12,6 @@
 
 (defn- opt [sym kw] (get (meta sym) kw (get-in @METAMAP [sym kw])))
 
-#?(:cljs (declare resolve))
-
 (def ^:private HOST (atom {
   :clj {:re-def-sym 'def :qualify-here (fn [usym env] (symbol (str (.name *ns*) '/ usym)))}
   :cljs {:re-def-sym 'set! :qualify-here (fn [usym env] (symbol (str (:name (:ns env)) '/ usym)))}}))
@@ -41,7 +39,7 @@
 (defn- update-idxs [col idxs f] (reduce #(update-in %1 [%2] f) col idxs))
 
 (defn- duplicate-idxs [col]
-  (let [res (remove nil? (map-indexed #(if (= %2 (first col)) %1 nil) col))]
+  (let [res (remove nil? (map-indexed #(if (= %2 (first col)) %1 nil) col))] 
     (if (empty? res) nil res)))
 
 (defn- drop-idxs [col idxs]
