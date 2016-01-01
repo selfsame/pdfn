@@ -24,18 +24,6 @@ Many languages have dispatching based on both arity and argument type.  Predicat
 
 Method declarations are ordered. The user must reason about the specificity of the methods, but gains the ability to declare methods that override parts of a system without having to know the specifics. The absence of a predicate check is a 'wildcard' (nil).
 
-```clj
-(inspect foo :methods)
->{3
- {[pos? nil map?] (:fish),
-  [pos? neg? empty?] (:snail),
-  [neg? zero? nil] (:mouse),
-  [nil neg? map?] (:bird),
-  [neg? nil set?] (:dog),
-  [odd? pos? nil] (:lion), 
-  [even? neg? map?] (:horse)}}
-```
-
 **pdf** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  
 
 The compiled conditional has a unique path of ```(p v)``` evaluations for every method.
@@ -98,14 +86,16 @@ Declares a symbol that will be bound to a compiled dispatch fn.  Meta data can c
   :body)
 ```
 The vector binding uses meta data to define predicates.  Destructuring is not supported. 
+
   * Meta tags only support ```^symbol```, ```^:keyword```, and ```^{:map :literals}```.
   * _Note: ```^:keyword``` is notation for ```{:keyword true}``` but pdf interperates ( ```{foo true}``` ) meta as ```foo``` in the vector binding._
-  * 
- An optional map of `{arg predicate}` can follow the vector binding, as long as it is not the last form. 
+
+An optional map of `{arg predicate}` can follow the vector binding, as long as it is not the last form. 
+
    * allows most forms for predicates (**excepting** `#()` `(fn [])`)
    * merges onto meta predicates.
 
-by default, every `pdf` macro compiles the current code. `:defer-compile` configures this.
+by default, every `pdf` emits compiled code.
 
 ## compile!
 ```clj
