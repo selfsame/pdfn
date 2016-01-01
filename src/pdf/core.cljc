@@ -3,7 +3,7 @@
 
 (def ^:private DISPATCHMAP (atom {}))
 (def ^:private METAMAP (atom {}))
-(def ^:private argsyms (mapv (comp symbol str) "abcdefghijklmnopqrstuvwxyz"))
+(def ^:private argsyms (mapv (comp symbol str) "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOZ"))
 
 (def and* every-pred)
 (def not* (fn [& args] (complement (apply and* args))))
@@ -27,7 +27,7 @@
          :qualify-here (fn [usym env] (symbol (str (:name (:ns env)) '/ usym)))
          :get-ns-name  (fn [sym env] sym #_(or (:name (first (map #(get (% (:ns env)) sym) [:defs :use]))) sym) )}}))
 
-(defn- hosted [kw env] (kw ((if (boolean (:ns env)) :cljs :clj) @HOST)))
+(defn- hosted [kw env] (get-in @HOST [(if (boolean (:ns env)) :cljs :clj) kw]))
 
 (defn- grid-get [col & more] (get-in col (vec (cons :cols more))))
 
@@ -61,7 +61,7 @@
         (assoc :cols (mapv #(drop-idxs % idxs) (:cols g)))))
  
 (defn- grid->ast [-g]
-  (if (empty? (butlast (grid-get -g 0))) :nf
+  (if (empty? (butlast (grid-get -g 0))) ::nf
     (let [g (sort-grid -g score)
           -leaf (get (:leafs g) 0)
           leaf (if (#{::body} (first -leaf)) 
@@ -83,7 +83,7 @@
 
 (defn- ast->code [form] 
   (cond (vector? form) (seq (clojure.walk/walk ast->code identity form))
-        (list? form)   (first form)                                                            ;list in the ast is a quotation
+        (list? form)   (first form) 
         :else form))
 
 (defn- datatype? [v] (or (sequential? v) (set? v) (map? v)))
@@ -106,34 +106,55 @@
         [true] (ffirst res) 
         res))))
 
+(defn- before-last [col v] (flatten ((juxt butlast (fn [_] v) last) col)))
+
 (defmacro defpdf [sym & more]
   (swap! DISPATCHMAP dissoc (symbol sym))
   (swap! METAMAP assoc (symbol sym) (meta sym)) 
- `(defn ~sym [& args#]))
+ `(def ~sym nil))
 
 (defmacro pdf [sym args & more] 
   (let [inline      (opt sym :inline)
-        stub-arity  (opt sym :stub-arity)
-        [spec code] (if (and (map? (first more)) (rest more)) 
+        build-code  (if (opt sym :defer-compile) 'true (list 'compile! sym))
+        [spec code] (if (and (map? (first more)) (rest more))
                         [(first more)(rest more)] 
                         [{} more])  
         -preds      (mapv #(user-meta (meta %) &env) args)
         unmeta-args (mapv #(with-meta % nil) args)
         preds       (mapv #(qualify-walk (or %1 %2) &env)
-                      (map #(get spec % nil) args) -preds)
-        usym        (symbol (str sym (count args) '_ (hash `(quote ~preds))))
-        _ (swap! DISPATCHMAP update-in [sym (count args)] #(conj (or % {}) 
-            {preds (if inline (symbol-walk code (zipmap unmeta-args argsyms))
-                              [::body ((hosted :qualify-here &env) usym &env)])}))             
-        compiled    (cons 'fn (map 
-                      (fn [[arity-count data]]
-                        (list (vec (take arity-count argsyms)) 
-                              (ast->code (grid->ast (make-grid data)))))
-                      (sort (conj (zipmap (range (get {true 10 false 0 nil 0} stub-arity stub-arity)) (repeat nil))
-                                  (get @DISPATCHMAP sym)))))
-        re-def-sym (hosted :re-def-sym &env)]
+                          (map #(get spec % nil) args) -preds)
+        usym        (symbol (str sym (count args) '_ (hash `(quote ~preds))))]
+  (swap! DISPATCHMAP update-in [sym (count args)] merge 
+    {preds (if inline (symbol-walk code (zipmap unmeta-args argsyms))
+                      [::body ((hosted :qualify-here &env) usym &env)])})
   (if inline 
-    `(~re-def-sym ~sym ~compiled)
+    `~build-code
     `(do (~'declare ~usym)
-         (~re-def-sym ~usym (~'fn ~unmeta-args ~@code))
-         (~re-def-sym ~sym ~compiled)))))
+         (~(hosted :re-def-sym &env) ~usym (~'fn ~unmeta-args ~@code))
+         ~build-code))))
+
+(defmacro compile! [sym]
+  (let [variants   (get @DISPATCHMAP sym)
+        stub-arity (if (opt sym :stub-arity) (inc (inc (apply max (keys variants)))) 0)
+        variants   (sort (conj (zipmap (range stub-arity) (repeat ::stub)) variants))]
+  `(~(hosted :re-def-sym &env) ~sym 
+    ~(cons 'fn 
+      (map-indexed
+        (fn [idx [cnt data]]
+          (concat 
+            [(vec (cond-> (take cnt argsyms)
+                          (= (inc idx) stub-arity) (before-last '&)))] 
+            (if-not (= ::stub data)
+              [(ast->code (grid->ast (make-grid data)))]))) 
+        variants)))))
+
+
+(defmacro benchmark [n & code] `(time (dotimes [i# ~n] ~@code)))
+
+(defmacro ppexpand [code]
+  `(~'pprint/write (macroexpand-1 (quote ~code)) :dispatch ~'pprint/code-dispatch))
+
+(defmacro inspect [sym & k]
+  (case (first k) 
+    :methods `(ppexpand ~(get @DISPATCHMAP sym)) 
+    `(ppexpand (compile! ~sym))))

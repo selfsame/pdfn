@@ -1,106 +1,72 @@
 (ns ^:figwheel-always pdf.test
-#?( :cljs (:require [pdf.core :refer [and* or* not*] :refer-macros [defpdf pdf set!!]]
-                    [cljs.test :refer-macros [deftest is testing run-tests]]))
-#?( :cljs (:use [cljs.pprint :only [pprint write code-dispatch]])
-    :clj  (:use [pdf.core :only [and* not* or* *inline* defpdf pdf]]
-                [clojure.test :only [deftest is testing run-tests]]
-                [clojure.pprint :only [pprint]])))
+#?(:clj (:require [clojure.pprint :as pprint])
+  :cljs (:require [pdf.core :refer [and* or* not*] :refer-macros [defpdf pdf compile! inspect benchmark]]
+                  [cljs.test :refer-macros [deftest is testing run-tests]]
+                  [cljs.pprint :as pprint]))
+#?(:clj  (:use [pdf.core :only [and* not* or* defpdf pdf compile! inspect benchmark]]
+               [clojure.test :only [deftest is testing run-tests]])))
 
 #?(:cljs (enable-console-print!))
 
 (defn run-fn [f col] (mapv #(apply f %) col))
-
 (def non-number? (not* number?))
 (def thing (and* map? :name))
  
 (deftest var-binding
   (defpdf t01)
   (is (= (fn? t01) true)))
-
-(deftest method-binding
-  (declare t07)
-  (is (= (fn? (pdf t07 [])) false)))
  
 (deftest behaviour-1
   (def ? (fn [v] (= 1 v)))
-  (defpdf ^{:inline true} tile)
+  (defpdf ^{:inline true :stub-arity true} tile)
+
   (pdf tile [a b] " ")
-  (pdf tile [^pos? value data]
-    (apply tile data))
+  (pdf tile [^pos? value data] (apply tile data))
 
   (pdf tile [   n    w    e    s] '.)
   (pdf tile [^? n    w    e    s] '|)
   (pdf tile [^? n    w    e ^? s] '│)
   (pdf tile [   n ^? w ^? e    s] '-)
-  (pdf tile [   n    w ^? e ^? s] '┌)
-  (pdf tile [^? n    w ^? e ^? s] '├)
-  (pdf tile [   n ^? w ^? e ^? s] '┬)
-  (pdf tile [^? n ^? w ^? e ^? s] '┼)
+  (pdf tile [   n    w ^? e ^? s] 'r)
+  (pdf tile [^? n    w ^? e ^? s] 'K)
+  (pdf tile [   n ^? w ^? e ^? s] 'T)
+  (pdf tile [^? n ^? w ^? e ^? s] '+)
+  (inspect tile :methods)
+  (inspect tile)
 
-  (def level 
-[[1 1 1 1]
- [1 0 1 0]
- [1 1 0 1]
- [1 0 1 0]])
- 
-(print (apply str (mapv (comp #(apply str (concat ["\n"] %)) vec) (partition 4 (mapv #(apply tile %) 
-(vec (for 
-  [y (range (count level))
-   x (range (count (first level)))]
-  [(get-in level [y x])
-    (vec (map last (partition 2 
-      (for [yy (range 3)
-            xx (range 3)]
-    (get-in level 
-      [(+ y (dec yy)) 
-       (+ x (dec xx))])))))])))))))
+(benchmark 10000 (tile 0 1 0 1))
+
+  (is (= ['T '- '+]
+        (run-fn tile [
+          [0 1 1 1]
+          [0 1 1 0]
+          [1 1 1 1]]))))
 
 
 
-  (is (= ["|" "-"]))
-        (run-fn tile [[1 [0 1 0 1]][1 [1 0 1 0]]]))
+(defpdf ^{:inline true :stub-arity false :defer-build true} joe)
+(pdf joe [^sequential? a] :seq)
+(pdf joe [^number? a] :number)
+(pdf joe [a b c d] :dogs)
+(compile! joe)
+
+(inspect joe :methods)
+(inspect joe)
+
+(defpdf ^:inline foo)
+(pdf foo [^pos? a        b ^map?   c] :fish)
+(pdf foo [^pos? a ^neg?  b ^empty? c] :snail)
+(pdf foo [^neg? a ^zero? b         c] :mouse)
+(pdf foo [      a ^neg?  b ^map?   c] :bird)
+(pdf foo [^neg? a        b ^set?   c] :dog)
+(pdf foo [^odd? a ^pos?  b         c] :lion)
+(pdf foo [^pos? a        b ^set?   c] {b #{3 4 5}} :horse)
 
 
-(run-tests) 
-
-#?(:clj 
-
-(do 
-    (defpdf frog)
-    (pdf frog [a b] :1)
-    (pdf frog [a b c d e] :5)
-    (pprint (macroexpand '(pdf ^{:inline true} frog [a b c d e] :5))))
-
-:cljs
-(do 
-    (defpdf ^{:inline false :stub-arity 10 :qualify-syms false}  frog)
-    (pdf frog [a b] :1)
-    (pdf ^:inline  frog [^number? a ^frog b c d e] (list frog))
-    (write (macroexpand '(pdf tile [^? n ^? w ^? e ^? s] '┼) #_(pdf frog [a b c d e u i o p v n m j k w] :5))
-      :dispatch code-dispatch
-      ))
-)
-
-
-
-(fn ([a b] (if (pos? a) (apply tile b) " "))
-   ([a b c d]
-     (if (? c)
-       (if (? d)
-         (if (? a) (if (? b) '┼ '├) (if (? b) '┬ '┌))
-         (if (? b) '- (if (? a) '| '.)))
-       (if (? a) (if (? d) '│ '|) '.))))
-
-(fn ([a b] (if (pos? a) (apply tile b) " "))
-    ([a b c d]
-      (if (and
-            (pdf.test/? c)
-            (pdf.test/? d)
-            (pdf.test/? a)
-            (pdf.test/? b))
-        '┼
-        (if (? c)
-          (if (? d)
-            (if (? a) (if (? b) '┼ '├) (if (? b) '┬ '┌))
-            (if (? b) '- (if (? a) '| '.)))
-          (if (? a) (if (? d) '│ '|) '.)))))
+(comment 
+(inspect foo :methods)
+(inspect foo)
+(prn (frequencies (for [a (range 10)
+      b (range 10)
+      c [nil {} {1 2} #{}]]
+  (foo (- a 5) (- b 5) c)))))
