@@ -1,16 +1,12 @@
-# predicate dispatch
+# predicate dispatching for clojure
 
 ```clj
 [selfsame/pdf "0.0.9-SNAPSHOT"]
 ```
 
-> _a multimethod style macro for compiling core.match style conditional dispatching for ordered methods with predicate:argument patterns_
+> _***a multimethod style macro for compiling core.match style conditionals from ordered methods with predicate:argument patterns***_
 
 Many languages have dispatching based on both arity and argument type.  Predicate dispatching is a similar system where methods variants define unary predicate patterns for the arguments.  When the results of applying the predicates to the args are truthy the method is validated and called.
-
-
-
-
 
 ```clj
 (defpdf ^:inline foo)
@@ -28,9 +24,9 @@ Many languages have dispatching based on both arity and argument type.  Predicat
 >:horse
 ```
 
-The absence of a predicate check is a 'wildcard' (sparse pattern).  
+The absence of a predicate check is a 'wildcard'.
 
-**pdf** declarations are ordered. The user must reason about the specificity of the methods, but gains the ability to declare methods that override parts of a system without having to know the specifics.  
+Method declarations are ordered. The user must reason about the specificity of the methods, but gains the ability to declare methods that override parts of a system without having to know the specifics.  
 
 ```clj
 (inspect foo :methods)
@@ -45,9 +41,7 @@ The absence of a predicate check is a 'wildcard' (sparse pattern).
 ```
 
 
-**pdf** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  
-
-The compiled conditional has a unique path of ```(p v)``` evaluations for every method leaf.
+**pdf** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  The compiled conditional has a unique path of ```(p v)``` evaluations for every method leaf.
 
 ```clj
 (inspect foo)
@@ -96,14 +90,14 @@ The compiled conditional has a unique path of ```(p v)``` evaluations for every 
 # Usage
 ```clj
 ;clj
-(:use [pdf.core])
+(ns foo.core (:require [pdf.core :refer :all]))
 
 ;cljs
 (:require [pdf.core :refer [and* or* not* is*] :refer-macros [defpdf pdf compile! inspect benchmark]])
 ```
 
 
-# Documentation
+# macros
 
 ## defpdf 
 ```clj
@@ -130,7 +124,7 @@ Different arities are compiled separately and grouped into the main fn. This is 
   {b #{nil 0 false}}
   :body)
 ```
-* Symbol meta denotes configuration for the individual method (usually :inline).
+* Symbol meta denotes configuration for the individual method.
 
 * **predicates**
   * pdf methods associate unary predicate fns with arguments. 
@@ -179,6 +173,7 @@ pprints code or method map, assumes user has a `pprint` alias.
 ```
 Convenience macro for `(time (dotimes [i n] code))` 
 
+# functions
 
 ### and* or* not*
 ```clj
@@ -191,6 +186,14 @@ composition fns.
 ((is* 5) 5)
 ;true
 ```
+
+# configuration
+
+meta data on the defpdf or pdf symbol can configure the following:
+
+* `:inline` when false (default) methods will be externally defined.  External methods are usefull for debugging exceptions, but inline is easier to read when inspecting and is a bit faster.
+* `:stub-arity` (default false) when true the compiled fn will fill unused arities with blank variants. (including [& more])
+* `:defer-compile` (default false) when true requires user to explicitly `(compile! f)`, avoiding code generation for every pdf method step.
 
 
 # REPL workflow 
