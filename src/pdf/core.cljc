@@ -98,7 +98,7 @@
 
 (defmacro pdf [sym args & more] 
   (let [inline      (opt sym :inline)
-        build-code  (if (opt sym :defer-compile) 'true (list 'compile! sym))
+        build-code  (if (opt sym :defer-compile) 'true (list 'pdf.core/compile! sym))
         [spec code] (if (and (map? (first more)) (rest more))
                         [(first more)(rest more)] 
                         [{} more])  
@@ -106,8 +106,8 @@
         unmeta-args (mapv #(with-meta % nil) args)
         preds       (mapv #(or %1 %2) (map #(get spec % nil) args) -preds)
         usym        (symbol (str sym (count args) '_ (hash `(quote ~preds))))
-        stack (or (get-in @DISPATCHMAP [sym (count args)]) {})
-        method-idx (cond-> (count stack) (contains? stack preds) inc)]
+        stack       (or (get-in @DISPATCHMAP [sym (count args)]) {})
+        method-idx  (cond-> (count stack) (contains? stack preds) inc)]
   (swap! DISPATCHMAP update-in [sym (count args)] merge 
     {(with-meta preds {:idx method-idx}) 
      (if-not inline [::body usym] (symbol-walk code (zipmap unmeta-args argsyms)))})
@@ -139,5 +139,5 @@
 (defmacro inspect [sym & k]
   (case (first k) 
     :methods `(ppexpand ~(into {} (map (fn [v] (update-in v [1] #(into [] (pdf-sort %))))) (get @DISPATCHMAP sym)))
-    :ast `(ppexpand ~(map (comp grid->ast make-grid) (vals (get @DISPATCHMAP sym))) )
-    `(ppexpand (compile! ~sym))))
+    :ast     `(ppexpand ~(map (comp grid->ast make-grid) (vals (get @DISPATCHMAP sym))) )
+             `(ppexpand (pdf.core/compile! ~sym))))

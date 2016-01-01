@@ -1,9 +1,9 @@
 (ns ^:figwheel-always pdf.test
 #?(:clj (:require [clojure.pprint :as pprint])
-  :cljs (:require [pdf.core :refer [and* or* not*] :refer-macros [defpdf pdf compile! inspect benchmark]]
+  :cljs (:require [pdf.core :refer [and* or* not*] :refer-macros [defpdf pdf inspect benchmark]]
                   [cljs.test :refer-macros [deftest is testing run-tests]]
                   [cljs.pprint :as pprint]))
-#?(:clj  (:use [pdf.core :only [and* not* or* defpdf pdf compile! inspect benchmark]]
+#?(:clj  (:use [pdf.core :only [and* not* or* defpdf pdf inspect benchmark]]
                [clojure.test :only [deftest is testing run-tests]])))
 
 #?(:cljs (enable-console-print!))
@@ -35,7 +35,7 @@
   (pdf tile [^? n    w ^? e ^? s] 'K)
   (pdf tile [   n ^? w ^? e ^? s] 'T)
   (pdf tile [^? n ^? w ^? e ^? s] '+)
-  
+
   (is (= ['T '- '+]
         (run-fn tile [
           [0 1 1 1]
