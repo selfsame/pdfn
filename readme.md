@@ -19,7 +19,7 @@ Many languages have dispatching based on both arity and argument type.  Predicat
 (pdf foo [^odd?  a ^pos?  b         c] :lion)
 (pdf foo [^even? a ^neg?  b ^map?   c] :horse)
 
-(foo -4 -1 {})
+(foo 4 -1 [])
 >:snail
 ```
 
