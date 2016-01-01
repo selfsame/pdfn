@@ -41,7 +41,9 @@ Method declarations are ordered. The user must reason about the specificity of t
 ```
 
 
-**pdf** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  The compiled conditional has a unique path of ```(p v)``` evaluations for every method leaf.
+**pdf** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  
+
+The compiled conditional has a unique path of ```(p v)``` evaluations for every method leaf.
 
 ```clj
 (inspect foo)
@@ -84,9 +86,6 @@ Method declarations are ordered. The user must reason about the specificity of t
 ```
 
 
-
-
-
 # Usage
 ```clj
 ;clj
@@ -117,24 +116,23 @@ Declares a symbol that will be bound to a compiled dispatch fn.  Meta data can c
 * The order of definition matters - last defined is the first to be considered.  
 * The user is left to design systems that increase specificity.
 
-Different arities are compiled separately and grouped into the main fn. This is normal clojure arity dispatching, their methods do not intersect.
+Different arities are compiled separately and grouped into the main fn. 
 
 ```clj
 (pdf ^:inline baz [^int? a b ^:kw c]
   {b #{nil 0 false}}
   :body)
 ```
-* Symbol meta denotes configuration for the individual method.
-
 * **predicates**
   * pdf methods associate unary predicate fns with arguments. 
   * Any fn with a single arity is suitable. 
   * Absence of a predicate is a wildcard.
   * The vector binding uses meta data to define predicates.  Destructuring is not supported. 
     * Meta tags only support ```^var```, ```^:keyword```, and ```^{:map :literals}```.
-    * _Note: ```^:keyword``` meta is usually shorthand for ```{:keyword true}```, but we transform ( ```{foo true}``` ) meta to ```foo``` as keywords are more desirable_
+    * _Note: ```^:keyword``` is notation for ```{:keyword true}``` but pdf interperates ( ```{foo true}``` ) meta as ```foo``` in the vector binding._
 
   * An optional map of arg bindings to predicates can follow the vector binding, if followed by body. 
+    * allow most forms for predicates (**excepting** `#()` `(fn [])`)
     * Map predicates merge onto meta predicates.
 
 by default, each `pdf` compiles the current code. `:defer-compile` configures this.
@@ -179,13 +177,14 @@ Convenience macro for `(time (dotimes [i n] code))`
 ```clj
 (and* map? (not* empty?) (or* :red :blue))
 ```
-composition fns.
+predicate composition fns.
 
 ### is*
 ```clj
 ((is* 5) 5)
 ;true
 ```
+makes equiv predicate
 
 # configuration
 
