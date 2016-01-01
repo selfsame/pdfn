@@ -14,6 +14,10 @@
  
 (deftest var-binding
   (defpdf t01)
+  (is (= (fn? t01) false))
+  (pdf ^:defer-compile t01 [])
+  (is (= (fn? t01) false))
+  (pdf t01 [])
   (is (= (fn? t01) true)))
  
 (deftest behaviour-1
@@ -31,10 +35,7 @@
   (pdf tile [^? n    w ^? e ^? s] 'K)
   (pdf tile [   n ^? w ^? e ^? s] 'T)
   (pdf tile [^? n ^? w ^? e ^? s] '+)
-  (inspect tile :methods)
   (inspect tile)
-
-(benchmark 10000 (tile 0 1 0 1))
 
   (is (= ['T '- '+]
         (run-fn tile [
@@ -42,31 +43,4 @@
           [0 1 1 0]
           [1 1 1 1]]))))
 
-
-
-(defpdf ^{:inline true :stub-arity false :defer-build true} joe)
-(pdf joe [^sequential? a] :seq)
-(pdf joe [^number? a] :number)
-(pdf joe [a b c d] :dogs)
-(compile! joe)
-
-(inspect joe :methods)
-(inspect joe)
-
-(defpdf ^:inline foo)
-(pdf foo [^pos? a        b ^map?   c] :fish)
-(pdf foo [^pos? a ^neg?  b ^empty? c] :snail)
-(pdf foo [^neg? a ^zero? b         c] :mouse)
-(pdf foo [      a ^neg?  b ^map?   c] :bird)
-(pdf foo [^neg? a        b ^set?   c] :dog)
-(pdf foo [^odd? a ^pos?  b         c] :lion)
-(pdf foo [^pos? a        b ^set?   c] {b #{3 4 5}} :horse)
-
-
-(comment 
-(inspect foo :methods)
-(inspect foo)
-(prn (frequencies (for [a (range 10)
-      b (range 10)
-      c [nil {} {1 2} #{}]]
-  (foo (- a 5) (- b 5) c)))))
+(run-tests)

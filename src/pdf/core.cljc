@@ -15,17 +15,8 @@
 #?(:cljs (declare resolve))
 
 (def ^:private HOST (atom {
-  :clj {:re-def-sym 'def
-        :qualify-here (fn [usym env] (symbol (str (.name *ns*) '/ usym)))
-        :get-ns-name 
-        (fn [sym env]
-          (let [[_ spc nam] (re-find #"^[#]\'([^\/]+)[\/](.*)"  (str (resolve (symbol (str sym)))))]
-            (cond (nil? spc) (symbol nam) 
-                  (opt sym :qualify-syms) (symbol (str spc '/ nam))
-                  :else (symbol nam))))}
-  :cljs {:re-def-sym 'set!
-         :qualify-here (fn [usym env] (symbol (str (:name (:ns env)) '/ usym)))
-         :get-ns-name  (fn [sym env] sym #_(or (:name (first (map #(get (% (:ns env)) sym) [:defs :use]))) sym) )}}))
+  :clj {:re-def-sym 'def :qualify-here (fn [usym env] (symbol (str (.name *ns*) '/ usym)))}
+  :cljs {:re-def-sym 'set! :qualify-here (fn [usym env] (symbol (str (:name (:ns env)) '/ usym)))}}))
 
 (defn- hosted [kw env] (get-in @HOST [(if (boolean (:ns env)) :cljs :clj) kw]))
 
@@ -38,12 +29,12 @@
      :cols (mapv #(conj (mapv (fn [c] (get c %)) ks) (get argsyms %)) 
                   (range cnt))}))
 
-(defn- score [-col]
-  (if (nil? (first -col)) 0
-    (let [colp (remove nil? (butlast -col))
-          fq (frequencies colp)]
-      (* -1 (apply + (cons (count colp) 
-                     (map (comp #(* % 100) dec) (vals fq))))))))
+(defn- score [col]
+  (let [head (first col)   
+        colp (remove nil? (butlast col))]
+    (if-not head 0                                                    ;constructor-prefix (Q)
+      (- (* 10 (- (dec (get (frequencies colp) head)) (count colp)))  ;small-branching (B)
+         (count (take-while (not* nil?) col))))))
 
 (defn- sort-grid [grid f] (assoc grid :cols (vec (sort-by f (:cols grid)))))
 
@@ -82,16 +73,11 @@
                        (grid->ast (grid-drop-idxs g dups))]))))                                ;failure - discard rows with p
 
 (defn- ast->code [form] 
-  (cond (vector? form) (seq (clojure.walk/walk ast->code identity form))
+  (cond (vector? form) (seq (clojure.walk/walk ast->code identity (vec (remove #{::nf} form))))
         (list? form)   (first form) 
         :else form))
 
 (defn- datatype? [v] (or (sequential? v) (set? v) (map? v)))
-
-(defn- qualify-walk [form env]
-  (cond (symbol? form)   ((hosted :get-ns-name env) form env)
-        (datatype? form) (clojure.walk/walk #(qualify-walk % env) identity form)
-        :else form))
 
 (defn- symbol-walk [form xform]
   (cond (symbol? form)   (get xform form form)
@@ -101,12 +87,11 @@
 (defn- user-meta [v env]
   (or (:tag v)
     (let [res (apply dissoc v [:file :line :column :end-line :end-column :source])]
-      (case (mapv last res) 
-        [] nil 
-        [true] (ffirst res) 
-        res))))
+      (get {[] nil [true] (ffirst res)} (mapv last res) res))))
 
 (defn- before-last [col v] (flatten ((juxt butlast (fn [_] v) last) col)))
+
+(defn- pdf-sort [m] (sort-by (comp :idx meta first) m))
 
 (defmacro defpdf [sym & more]
   (swap! DISPATCHMAP dissoc (symbol sym))
@@ -121,12 +106,13 @@
                         [{} more])  
         -preds      (mapv #(user-meta (meta %) &env) args)
         unmeta-args (mapv #(with-meta % nil) args)
-        preds       (mapv #(qualify-walk (or %1 %2) &env)
-                          (map #(get spec % nil) args) -preds)
-        usym        (symbol (str sym (count args) '_ (hash `(quote ~preds))))]
+        preds       (mapv #(or %1 %2) (map #(get spec % nil) args) -preds)
+        usym        (symbol (str sym (count args) '_ (hash `(quote ~preds))))
+        stack (or (get-in @DISPATCHMAP [sym (count args)]) {})
+        method-idx (cond-> (count stack) (contains? stack preds) inc)]
   (swap! DISPATCHMAP update-in [sym (count args)] merge 
-    {preds (if inline (symbol-walk code (zipmap unmeta-args argsyms))
-                      [::body ((hosted :qualify-here &env) usym &env)])})
+    {(with-meta preds {:idx method-idx}) 
+     (if-not inline [::body usym] (symbol-walk code (zipmap unmeta-args argsyms)))})
   (if inline 
     `~build-code
     `(do (~'declare ~usym)
@@ -145,16 +131,15 @@
             [(vec (cond-> (take cnt argsyms)
                           (= (inc idx) stub-arity) (before-last '&)))] 
             (if-not (= ::stub data)
-              [(ast->code (grid->ast (make-grid data)))]))) 
+              [(ast->code (grid->ast (make-grid (pdf-sort data))))]))) 
         variants)))))
-
 
 (defmacro benchmark [n & code] `(time (dotimes [i# ~n] ~@code)))
 
-(defmacro ppexpand [code]
-  `(~'pprint/write (macroexpand-1 (quote ~code)) :dispatch ~'pprint/code-dispatch))
+(defmacro ppexpand [code] `(~'pprint/write (macroexpand-1 (quote ~code)) :dispatch ~'pprint/code-dispatch))
 
 (defmacro inspect [sym & k]
   (case (first k) 
-    :methods `(ppexpand ~(get @DISPATCHMAP sym)) 
+    :methods `(ppexpand ~(into {} (map (fn [v] (update-in v [1] #(into [] (pdf-sort %))))) (get @DISPATCHMAP sym)))
+    :ast `(ppexpand ~(map (comp grid->ast make-grid) (vals (get @DISPATCHMAP sym))) )
     `(ppexpand (compile! ~sym))))
