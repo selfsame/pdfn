@@ -10,6 +10,7 @@ Many languages have dispatching based on both arity and argument type.  Predicat
 
 ```clj
 (defpdf ^:inline foo)
+
 (pdf foo [^pos?  a        b ^map?   c] :fish)
 (pdf foo [^pos?  a ^neg?  b ^empty? c] :snail)
 (pdf foo [^neg?  a ^zero? b         c] :mouse)
@@ -31,23 +32,23 @@ The compiled conditional has a unique path of ```(p v)``` evaluations for every 
 ```clj
 (inspect foo)
 >(fn ([a b c]
-  (if (and (even? a) (neg? b) (map? c)) :horse
-    (if (and (odd? a) (pos? b)) :lion
-      (if (neg? a)
-        (if (set? c) :dog
+  (if (and (even? a) (neg? b) (map? c))
+    :horse
+    (if (and (odd? a) (pos? b))
+      :lion
+      (if (and (set? c) (neg? a))
+        :dog
+        (if (neg? b)
           (if (map? c)
-            (if (neg? b) :bird
-              (if (zero? b)  :mouse
-                (if (pos? a) :fish 
-                  :pdf.core/nf)))
-            (if (zero? b) :mouse
-              (if (and (neg? b) (empty? c) (pos? a)) :snail 
-                :pdf.core/nf))))
-        (if (map? c)
-          (if (neg? b) :bird 
-            (if (pos? a) :fish :pdf.core/nf))
-          (if (and (empty? c) (neg? b) (pos? a)) :snail 
-            :pdf.core/nf)))))))
+            :bird
+            (if (and (neg? a) (zero? b))
+              :mouse
+              (if (and (pos? a) (empty? c)) 
+                :snail)))
+          (if (and (neg? a) (zero? b))
+            :mouse 
+            (if (and (pos? a) (map? c)) 
+              :fish))))))))
 ```
 
 
