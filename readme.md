@@ -6,12 +6,10 @@
 
 > _a multimethod style macro for compiling core.match style conditional dispatching for ordered methods with predicate:argument patterns_
 
-Many languages have dispatching based on both arity and argument type.  Predicate dispatching is a similar system where methods define unary predicate patterns to be invoked on the arguments.  When the results of applying the predicates to the args are truthy the method is validated and called.
+Many languages have dispatching based on both arity and argument type.  Predicate dispatching is a similar system where methods variants define unary predicate patterns for the arguments.  When the results of applying the predicates to the args are truthy the method is validated and called.
 
-This can emulate type dispatching ```[(string? a) (number b?) (vector? c)]```, but can replace any control flow that considers the individual arguments:
- ```[(re-find #"^http[s]?" a) ((every-pred neg? odd?) b) (empty? c)]```.
 
-The absence of a predicate check is a 'wildcard' (sparse pattern).  
+
 
 
 ```clj
@@ -28,7 +26,30 @@ The absence of a predicate check is a 'wildcard' (sparse pattern).
 >:lion
 (foo 3 3 #{})
 >:horse
+```
 
+The absence of a predicate check is a 'wildcard' (sparse pattern).  
+
+**pdf** declarations are ordered. The user must reason about the specificity of the methods, but gains the ability to declare methods that override parts of a system without having to know the specifics.  
+
+```clj
+(inspect foo :methods)
+>{3
+ {[pos? nil map?] (:fish),
+  [pos? neg? empty?] (:snail),
+  [neg? zero? nil] (:mouse),
+  [nil neg? map?] (:bird),
+  [neg? nil set?] (:dog),
+  [odd? pos? nil] (:lion), 
+  [pos? #{4 3 5} set?] (:horse)}}
+```
+
+
+**pdf** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  
+
+The compiled conditional has a unique path of ```(p v)``` evaluations for every method leaf.
+
+```clj
 (inspect foo)
 >(set!
   foo
@@ -68,9 +89,9 @@ The absence of a predicate check is a 'wildcard' (sparse pattern).
               (if (and (map? c) (neg? b)) :bird :pdf.core/nf)))))))
 ```
 
-**pdf** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  The compiled conditional has a unique path of ```(p v)``` evaluations for every method leaf.
 
-**pdf** declarations are ordered. The user must reason about the specificity of the methods, but gains the ability to declare methods that override parts of a system without having to know the specifics.  
+
+
 
 # Usage
 ```clj
