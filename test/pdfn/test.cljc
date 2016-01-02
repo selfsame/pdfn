@@ -1,9 +1,9 @@
 (ns ^:figwheel-always pdfn.test
 #?(:clj (:require [clojure.pprint :as pprint])
-  :cljs (:require [pdfn.core :refer [and* or* not*] :refer-macros [defpdfn pdfn inspect benchmark]]
+  :cljs (:require [pdfn.core :refer [and* or* not*] :refer-macros [defpdfn pdfn inspect benchmark compile!]]
                   [cljs.test :refer-macros [deftest is testing run-tests]]
                   [cljs.pprint :as pprint]))
-#?(:clj  (:use [pdfn.core :only [and* not* or* defpdfn pdfn inspect benchmark]]
+#?(:clj  (:use [pdfn.core :only [and* not* or* defpdfn pdfn inspect benchmark compile!]]
                [clojure.test :only [deftest is testing run-tests]])))
 
 #?(:cljs (enable-console-print!))
@@ -26,18 +26,22 @@
   :cljs (is (= (t02 1 2 3) :true)))
 
   (defpdfn ^:stub-arity t03)
-  (pdfn t03 [a b] true)
-  (is (= (t03 1 2 3) nil))
+  (pdfn t03 [a & b] :true)
+  (is (= (t03 1 2 3) :true))
 
-  (defpdfn ^:inline t04)
-  (pdfn t04
+  (defpdfn t04)
+  (pdfn t04 [& b] :true)
+  (is (= (t04 1 2 3) :true))
+
+  (defpdfn ^:inline t05)
+  (pdfn t05
     ([   a    b] :__)
     ([^? a    b] :*_)
     ([   a ^? b] :_*)
     ([^? a ^? b] :**))
 
   (is (= [:** :*_ :_* :__]
-         (run-fn t04 [[1 1][1 0][0 1][0 0]]))))
+         (run-fn t05 [[1 1][1 0][0 1][0 0]]))))
 
 (deftest behaviour-1
   (defpdfn ^{:inline true} tile)

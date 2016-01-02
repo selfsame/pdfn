@@ -87,10 +87,9 @@
     (let [res (apply dissoc v [:file :line :column :end-line :end-column :source])]
       (get {[] nil [true] (ffirst res)} (mapv last res) res))))
 
-(defn- before-last [col v] (flatten ((juxt butlast (fn [_] v) last) col)))
+(defn- before-last [col v] (if (first (rest col)) (flatten ((juxt butlast (fn [_] v) last) col)) (cons v col)))
 
 (defn- pdfn-sort [m] (sort-by (comp :idx meta first) m))
-
 
 (defmacro defpdfn [sym & more]
   (swap! DISPATCHMAP dissoc (symbol sym))
@@ -99,8 +98,8 @@
 
 (defmacro pdfn [sym & more] 
   `~(cons 'do (mapcat (fn [[args & more]]
-
-    (let [inline      (opt sym :inline)
+    (let [[args variadic] (mapv vec ((juxt remove filter) (is* '&) args))
+          inline      (opt sym :inline)
           build-code  (if (opt sym :defer-compile) 'true (list 'pdfn.core/compile! sym))
           [spec code] (if (and (map? (first more)) (rest more))
                           [(first more)(rest more)] 
@@ -112,18 +111,19 @@
           stack       (or (get-in @DISPATCHMAP [sym (count args)]) {})
           method-idx  (cond-> (count stack) (contains? stack preds) inc)]
     (swap! DISPATCHMAP update-in [sym (count args)] merge 
-      {(with-meta preds {:idx method-idx}) 
+      {(with-meta preds {:idx method-idx :variadic (first variadic)}) 
        (if-not inline [::body usym] (symbol-walk code (zipmap unmeta-args argsyms)))})
     (if inline 
       `(~build-code)
       `((~'declare ~usym)
+        [~(before-last [:a] :&)]
         (~(hosted :re-def-sym &env) ~usym (~'fn ~unmeta-args ~@code))
            ~build-code))))
     (if (list? (first more)) more (list more)))))
 
 (defmacro compile! [sym]
   (let [variants   (get @DISPATCHMAP sym)
-        stub-arity (if (opt sym :stub-arity) (inc (inc (apply max (keys variants)))) 0)
+        stub-arity (if (opt sym :stub-arity) (inc (apply max (keys variants))) 0)
         variants   (sort (conj (zipmap (range stub-arity) (repeat ::stub)) variants))]
   `(~(hosted :re-def-sym &env) ~sym 
     ~(cons 'fn 
@@ -131,7 +131,9 @@
         (fn [idx [cnt data]]
           (concat 
             [(vec (cond-> (take cnt argsyms)
-                          (= (inc idx) stub-arity) (before-last '&)))] 
+                          (or (= (inc idx) stub-arity)
+                              (and (not= ::stub data)
+                                   ((comp :variadic meta ffirst) data))) (before-last '&)))] 
             (if-not (= ::stub data)
               [(ast->code (grid->ast (make-grid (pdfn-sort data))))]))) 
         variants)))))

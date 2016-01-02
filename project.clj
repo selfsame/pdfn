@@ -1,4 +1,4 @@
-(defproject selfsame/pdfn "0.0.9.5-SNAPSHOT"
+(defproject selfsame/pdfn "0.0.9.6-SNAPSHOT"
   :description "Predicate dispatch for Clojure(Script)."
   :url "http://github.com/selfsame/pdfn"
   :license {:name "The MIT License (MIT)"
