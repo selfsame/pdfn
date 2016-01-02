@@ -1,7 +1,7 @@
 # predicate dispatching for clojure / clojurescript
 
 ```clj
-[selfsame/pdfn "0.0.9.5-SNAPSHOT"]
+[selfsame/pdfn "0.0.9.6-SNAPSHOT"]
 ```
 
 > _***a multimethod style macro for compiling core.match style conditionals from ordered methods with predicate:argument patterns***_
@@ -9,21 +9,43 @@
 Many languages have dispatching based on both arity and argument type.  Predicate dispatching is a similar system where methods variants define unary predicate patterns for the arguments.  When the results of applying the predicates to the args are truthy the method is called.
 
 ```clj
+(defpdfn open)
+
+(pdfn open [subject ^:contents object] 
+  (str "opening reveals" (:contents object)))
+
+(pdfn open [subject object] 
+  {object (and* :contents :locked)}
+  (str "it's locked"))
+
+(pdfn open [^:key subject object] 
+  {object (and* :contents :locked)}
+  (str "unlocking and opening reveals" (:contents object)))
+
+(open {} {:locked true :contents [:boots]})
+>"it's locked"
+
+(open {:key true} {:locked true :contents [:boots]})
+>"unlocking and opening reveals[:boots]"
+```
+
+Method declarations are ordered. The user must reason about the specificity of the methods, but gains the ability to declare methods that override parts of a system without having to know the specifics. The absence of a predicate check is a 'wildcard' (nil).
+
+```clj
 (defpdfn ^:inline foo)
 
-(pdfn foo [^pos?  a        b ^map?   c] :fish)
-(pdfn foo [^pos?  a ^neg?  b ^empty? c] :snail)
-(pdfn foo [^neg?  a ^zero? b         c] :mouse)
-(pdfn foo [       a ^neg?  b ^map?   c] :bird)
-(pdfn foo [^neg?  a        b ^set?   c] :dog)
-(pdfn foo [^odd?  a ^pos?  b         c] :lion)
-(pdfn foo [^even? a ^neg?  b ^map?   c] :horse)
+(pdfn foo 
+  ([^pos?  a        b ^map?   c] :fish)
+  ([^pos?  a ^neg?  b ^empty? c] :snail)
+  ([^neg?  a ^zero? b         c] :mouse)
+  ([       a ^neg?  b ^map?   c] :bird)
+  ([^neg?  a        b ^set?   c] :dog)
+  ([^odd?  a ^pos?  b         c] :lion)
+  ([^even? a ^neg?  b ^map?   c] :horse))
 
 (foo 4 -1 [])
 >:snail
 ```
-
-Method declarations are ordered. The user must reason about the specificity of the methods, but gains the ability to declare methods that override parts of a system without having to know the specifics. The absence of a predicate check is a 'wildcard' (nil).
 
 **pdfn** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdfn), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  
 

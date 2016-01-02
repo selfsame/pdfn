@@ -9,8 +9,7 @@
 #?(:cljs (enable-console-print!))
 
 (defn run-fn [f col] (mapv #(apply f %) col))
-(def non-number? (not* number?))
-(def thing (and* map? :name))
+(def ? (fn [v] (= 1 v)))
  
 (deftest var-binding
   (defpdfn t01)
@@ -25,32 +24,36 @@
   (pdfn t02 [a b] :true)
 #?(:clj (is (thrown? clojure.lang.ArityException (t02 1 2 3)))
   :cljs (is (= (t02 1 2 3) :true)))
+
   (defpdfn ^:stub-arity t03)
   (pdfn t03 [a b] true)
-  (is (= (t03 1 2 3) nil)))
+  (is (= (t03 1 2 3) nil))
+
+  (defpdfn ^:inline t04)
+  (pdfn t04
+    ([   a    b] :__)
+    ([^? a    b] :*_)
+    ([   a ^? b] :_*)
+    ([^? a ^? b] :**))
+
+  (is (= [:** :*_ :_* :__]
+         (run-fn t04 [[1 1][1 0][0 1][0 0]]))))
 
 (deftest behaviour-1
-  (def ? (fn [v] (= 1 v)))
-  (defpdfn ^{:inline true :stub-arity true} tile)
-
-  (pdfn tile [a b] " ")
-  (pdfn tile [^pos? value data] (apply tile data))
-
-  (pdfn tile [   n    w    e    s] '.)
-  (pdfn tile [^? n    w    e    s] '|)
-  (pdfn tile [^? n    w    e ^? s] '│)
-  (pdfn tile [   n ^? w ^? e    s] '-)
-  (pdfn tile [   n    w ^? e ^? s] 'r)
-  (pdfn tile [^? n    w ^? e ^? s] 'K)
-  (pdfn tile [   n ^? w ^? e ^? s] 'T)
-  (pdfn tile [^? n ^? w ^? e ^? s] '+)
+  (defpdfn ^{:inline true} tile)
+  (pdfn tile 
+    ([   n    w    e    s] '.)
+    ([^? n    w    e    s] '|)
+    ([^? n    w    e ^? s] '│)
+    ([   n ^? w ^? e    s] '-)
+    ([   n    w ^? e ^? s] 'r)
+    ([^? n    w ^? e ^? s] 'K)
+    ([   n ^? w ^? e ^? s] 'T)
+    ([^? n ^? w ^? e ^? s] '+))
 
   (is (= ['T '- '+]
-        (run-fn tile [
-          [0 1 1 1]
-          [0 1 1 0]
-          [1 1 1 1]]))))
-
-
+         (run-fn tile [[0 1 1 1]
+                       [0 1 1 0]
+                       [1 1 1 1]]))))
 
 (run-tests)

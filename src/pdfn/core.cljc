@@ -95,28 +95,31 @@
 (defmacro defpdfn [sym & more]
   (swap! DISPATCHMAP dissoc (symbol sym))
   (swap! METAMAP assoc (symbol sym) (meta sym)) 
- `(do (def ~sym nil)))
+ `(def ~sym nil))
 
-(defmacro pdfn [sym args & more] 
-  (let [inline      (opt sym :inline)
-        build-code  (if (opt sym :defer-compile) 'true (list 'pdfn.core/compile! sym))
-        [spec code] (if (and (map? (first more)) (rest more))
-                        [(first more)(rest more)] 
-                        [{} more])  
-        -preds      (mapv #(user-meta (meta %) &env) args)
-        unmeta-args (mapv #(with-meta % nil) args)
-        preds       (mapv #(or %1 %2) (map #(get spec % nil) args) -preds)
-        usym        (symbol (str sym (count args) '_ (hash `(quote ~preds))))
-        stack       (or (get-in @DISPATCHMAP [sym (count args)]) {})
-        method-idx  (cond-> (count stack) (contains? stack preds) inc)]
-  (swap! DISPATCHMAP update-in [sym (count args)] merge 
-    {(with-meta preds {:idx method-idx}) 
-     (if-not inline [::body usym] (symbol-walk code (zipmap unmeta-args argsyms)))})
-  (if inline 
-    `~build-code
-    `(do (~'declare ~usym)
-         (~(hosted :re-def-sym &env) ~usym (~'fn ~unmeta-args ~@code))
-         ~build-code))))
+(defmacro pdfn [sym & more] 
+  `~(cons 'do (mapcat (fn [[args & more]]
+
+    (let [inline      (opt sym :inline)
+          build-code  (if (opt sym :defer-compile) 'true (list 'pdfn.core/compile! sym))
+          [spec code] (if (and (map? (first more)) (rest more))
+                          [(first more)(rest more)] 
+                          [{} more])  
+          -preds      (mapv #(user-meta (meta %) &env) args)
+          unmeta-args (mapv #(with-meta % nil) args)
+          preds       (mapv #(or %1 %2) (map #(get spec % nil) args) -preds)
+          usym        (symbol (str sym (count args) '_ (hash `(quote ~preds))))
+          stack       (or (get-in @DISPATCHMAP [sym (count args)]) {})
+          method-idx  (cond-> (count stack) (contains? stack preds) inc)]
+    (swap! DISPATCHMAP update-in [sym (count args)] merge 
+      {(with-meta preds {:idx method-idx}) 
+       (if-not inline [::body usym] (symbol-walk code (zipmap unmeta-args argsyms)))})
+    (if inline 
+      `(~build-code)
+      `((~'declare ~usym)
+        (~(hosted :re-def-sym &env) ~usym (~'fn ~unmeta-args ~@code))
+           ~build-code))))
+    (if (list? (first more)) more (list more)))))
 
 (defmacro compile! [sym]
   (let [variants   (get @DISPATCHMAP sym)
