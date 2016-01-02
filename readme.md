@@ -96,19 +96,24 @@ Declares a symbol that will be bound to a compiled dispatch fn.  Meta data can c
 ## pdfn
 ```clj
 (pdfn baz [a b] :body)
+
+(pdfn baz 
+  ([a] :x)
+  ([a b c & ^empty? more] :z))
 ```
 
 * The ```pdfn``` macro defines a method variant for an existing fn binding.  
 * The order of definition matters - last defined is the first to be considered.  
-* The user is left to design systems that increase specificity.
-* Different arities are compiled separately and grouped into the main fn. 
+* Multiple methods can be defined in one pdfn.
+* Different arities are compiled separately and grouped into the main fn.
+
 
 ```clj
 (pdfn ^:inline baz [^int? a b ^:kw c]
   {b #{nil 0 false}}
   :body)
 ```
-The vector binding uses meta data to define predicates.  Destructuring is not supported. 
+The vector binding uses meta data to define predicates. You can use `&`, destructuring is not supported. 
 
   * Meta tags only support ```^symbol```, ```^:keyword```, and ```^{:map :literals}```.
   * _Note: ```^:keyword``` is notation for ```{:keyword true}``` but pdfn interperates ( ```{foo true}``` ) meta as ```foo``` in the vector binding._
@@ -158,7 +163,7 @@ makes equiv predicate
 meta data on the defpdfn or pdfn symbol can configure the following:
 
 * `:inline` when false (default) methods will be externally defined.  External methods are usefull for debugging exceptions, but inline is easier to read when inspecting and is a bit faster.
-* `:stub-arity` (default false) when true the compiled fn will fill unused arities with blank variants. (including [& more])
+* `:stub-arity` (default false) when true the compiled fn will fill unused arities with blank variants. (not including [& more])
 * `:defer-compile` (default false) when true requires user to explicitly `(compile! f)`, avoiding code generation for every pdfn method step.
 
 
