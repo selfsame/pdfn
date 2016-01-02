@@ -1,7 +1,7 @@
 # predicate dispatching for clojure / clojurescript
 
 ```clj
-[selfsame/pdf "0.0.9.5-SNAPSHOT"]
+[selfsame/pdfn "0.0.9.5-SNAPSHOT"]
 ```
 
 > _***a multimethod style macro for compiling core.match style conditionals from ordered methods with predicate:argument patterns***_
@@ -9,15 +9,15 @@
 Many languages have dispatching based on both arity and argument type.  Predicate dispatching is a similar system where methods variants define unary predicate patterns for the arguments.  When the results of applying the predicates to the args are truthy the method is called.
 
 ```clj
-(defpdf ^:inline foo)
+(defpdfn ^:inline foo)
 
-(pdf foo [^pos?  a        b ^map?   c] :fish)
-(pdf foo [^pos?  a ^neg?  b ^empty? c] :snail)
-(pdf foo [^neg?  a ^zero? b         c] :mouse)
-(pdf foo [       a ^neg?  b ^map?   c] :bird)
-(pdf foo [^neg?  a        b ^set?   c] :dog)
-(pdf foo [^odd?  a ^pos?  b         c] :lion)
-(pdf foo [^even? a ^neg?  b ^map?   c] :horse)
+(pdfn foo [^pos?  a        b ^map?   c] :fish)
+(pdfn foo [^pos?  a ^neg?  b ^empty? c] :snail)
+(pdfn foo [^neg?  a ^zero? b         c] :mouse)
+(pdfn foo [       a ^neg?  b ^map?   c] :bird)
+(pdfn foo [^neg?  a        b ^set?   c] :dog)
+(pdfn foo [^odd?  a ^pos?  b         c] :lion)
+(pdfn foo [^even? a ^neg?  b ^map?   c] :horse)
 
 (foo 4 -1 [])
 >:snail
@@ -25,7 +25,7 @@ Many languages have dispatching based on both arity and argument type.  Predicat
 
 Method declarations are ordered. The user must reason about the specificity of the methods, but gains the ability to declare methods that override parts of a system without having to know the specifics. The absence of a predicate check is a 'wildcard' (nil).
 
-**pdf** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  
+**pdfn** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdfn), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  
 
 The compiled conditional has a unique path of ```(p v)``` evaluations for every method.
 
@@ -55,48 +55,48 @@ The compiled conditional has a unique path of ```(p v)``` evaluations for every 
 ## Usage
 ```clj
 ;clj
-(ns foo.core (:require [pdf.core :refer :all]))
+(ns foo.core (:require [pdfn.core :refer :all]))
 
 ;cljs
 (ns foo.core 
-  (:require [pdf.core :refer [and* or* not* is*] :refer-macros [defpdf pdf compile! inspect benchmark]]))
+  (:require [pdfn.core :refer [and* or* not* is*] :refer-macros [defpdfn pdfn compile! inspect benchmark]]))
 ```
 
 
 # Docs
 
-## defpdf 
+## defpdfn 
 ```clj
-(defpdf ^{:inline false :stub-arity true} foo)
+(defpdfn ^{:inline false :stub-arity true} foo)
 ```
 Declares a symbol that will be bound to a compiled dispatch fn.  Meta data can configure options.
 
-## pdf
+## pdfn
 ```clj
-(pdf baz [a b] :body)
+(pdfn baz [a b] :body)
 ```
 
-* The ```pdf``` macro defines a method variant for an existing fn binding.  
+* The ```pdfn``` macro defines a method variant for an existing fn binding.  
 * The order of definition matters - last defined is the first to be considered.  
 * The user is left to design systems that increase specificity.
 * Different arities are compiled separately and grouped into the main fn. 
 
 ```clj
-(pdf ^:inline baz [^int? a b ^:kw c]
+(pdfn ^:inline baz [^int? a b ^:kw c]
   {b #{nil 0 false}}
   :body)
 ```
 The vector binding uses meta data to define predicates.  Destructuring is not supported. 
 
   * Meta tags only support ```^symbol```, ```^:keyword```, and ```^{:map :literals}```.
-  * _Note: ```^:keyword``` is notation for ```{:keyword true}``` but pdf interperates ( ```{foo true}``` ) meta as ```foo``` in the vector binding._
+  * _Note: ```^:keyword``` is notation for ```{:keyword true}``` but pdfn interperates ( ```{foo true}``` ) meta as ```foo``` in the vector binding._
 
 An optional map of `{arg predicate}` can follow the vector binding, as long as it is not the last form. 
 
    * allows most forms for predicates (**excepting** `#()` `(fn [])`)
    * merges onto meta predicates.
 
-by default, every `pdf` emits compiled code.
+by default, every `pdfn` emits compiled code.
 
 ## compile!
 ```clj
@@ -133,19 +133,19 @@ makes equiv predicate
 
 ## configuration
 
-meta data on the defpdf or pdf symbol can configure the following:
+meta data on the defpdfn or pdfn symbol can configure the following:
 
 * `:inline` when false (default) methods will be externally defined.  External methods are usefull for debugging exceptions, but inline is easier to read when inspecting and is a bit faster.
 * `:stub-arity` (default false) when true the compiled fn will fill unused arities with blank variants. (including [& more])
-* `:defer-compile` (default false) when true requires user to explicitly `(compile! f)`, avoiding code generation for every pdf method step.
+* `:defer-compile` (default false) when true requires user to explicitly `(compile! f)`, avoiding code generation for every pdfn method step.
 
 
 ## REPL workflow 
 
-`pdf` has a few caveats due to the ordered nature of it's parts. 
+`pdfn` has a few caveats due to the ordered nature of it's parts. 
 
-* **`defpdf`** eval removes `pdf` methods and built code
+* **`defpdfn`** eval removes `pdfn` methods and built code
 
-**`pdf`** re-evaluation depends on the predicate identity
+**`pdfn`** re-evaluation depends on the predicate identity
   * unchanged - original method entry updated in the dispatch map
   * changed - new method added to the end of the dispatch map

@@ -1,4 +1,4 @@
-(ns pdf.core 
+(ns pdfn.core 
   (:require [clojure.walk :as walk]))
 
 (def ^:private DISPATCHMAP (atom {}))
@@ -89,16 +89,17 @@
 
 (defn- before-last [col v] (flatten ((juxt butlast (fn [_] v) last) col)))
 
-(defn- pdf-sort [m] (sort-by (comp :idx meta first) m))
+(defn- pdfn-sort [m] (sort-by (comp :idx meta first) m))
 
-(defmacro defpdf [sym & more]
+
+(defmacro defpdfn [sym & more]
   (swap! DISPATCHMAP dissoc (symbol sym))
   (swap! METAMAP assoc (symbol sym) (meta sym)) 
- `(def ~sym nil))
+ `(do (def ~sym nil)))
 
-(defmacro pdf [sym args & more] 
+(defmacro pdfn [sym args & more] 
   (let [inline      (opt sym :inline)
-        build-code  (if (opt sym :defer-compile) 'true (list 'pdf.core/compile! sym))
+        build-code  (if (opt sym :defer-compile) 'true (list 'pdfn.core/compile! sym))
         [spec code] (if (and (map? (first more)) (rest more))
                         [(first more)(rest more)] 
                         [{} more])  
@@ -129,7 +130,7 @@
             [(vec (cond-> (take cnt argsyms)
                           (= (inc idx) stub-arity) (before-last '&)))] 
             (if-not (= ::stub data)
-              [(ast->code (grid->ast (make-grid (pdf-sort data))))]))) 
+              [(ast->code (grid->ast (make-grid (pdfn-sort data))))]))) 
         variants)))))
 
 (defmacro benchmark [n & code] `(time (dotimes [i# ~n] ~@code)))
@@ -138,6 +139,6 @@
 
 (defmacro inspect [sym & k]
   (case (first k) 
-    :methods `(ppexpand ~(into {} (map (fn [v] (update-in v [1] #(into [] (pdf-sort %))))) (get @DISPATCHMAP sym)))
+    :methods `(ppexpand ~(into {} (map (fn [v] (update-in v [1] #(into [] (pdfn-sort %))))) (get @DISPATCHMAP sym)))
     :ast     `(ppexpand ~(map (comp grid->ast make-grid) (vals (get @DISPATCHMAP sym))) )
-             `(ppexpand (pdf.core/compile! ~sym))))
+             `(ppexpand (pdfn.core/compile! ~sym))))
