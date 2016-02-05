@@ -60,4 +60,15 @@
                        [0 1 1 0]
                        [1 1 1 1]]))))
 
+(deftest map-options
+  (defpdfn ^:inline t06)
+  (pdfn t06 [a]                     {:default true})
+  (pdfn t06 [^number? a]            {:number true})
+  (pdfn t06 [a] {a vector?}         {:vector true})
+  (pdfn t06 ([^string? a]           {:string true})
+            ([^string? a] {a map?}  {:map true}))
+  (is (= 
+    (run-fn t06 [['a] [1] [[]] ["1"] [{}]]) 
+    [{:default true}{:number true}{:vector true}{:string true}{:map true}])))
+
 (run-tests)

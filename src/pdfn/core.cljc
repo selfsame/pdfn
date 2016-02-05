@@ -101,7 +101,7 @@
     (let [[args variadic] (mapv vec ((juxt remove filter) (is* '&) args))
           inline      (opt sym :inline)
           build-code  (if (opt sym :defer-compile) 'true (list 'pdfn.core/compile! sym))
-          [spec code] (if (and (map? (first more)) (rest more))
+          [spec code] (if (and (map? (first more)) (not (empty? (rest more))))
                           [(first more)(rest more)] 
                           [{} more])  
           -preds      (mapv #(user-meta (meta %) &env) args)
