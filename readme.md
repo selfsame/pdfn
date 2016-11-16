@@ -47,7 +47,7 @@ Method declarations are ordered. The user must reason about the specificity of t
 >:snail
 ```
 
-**pdfn** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdfn), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  
+**pdfn** uses an implementation of [Compiling Pattern Matching to good Decision Trees](http://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf), which is used/explained in depth by [core.match](https://github.com/clojure/core.match/wiki/Understanding-the-algorithm).  
 
 The compiled conditional has a unique path of ```(p v)``` evaluations for every method.
 
