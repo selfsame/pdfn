@@ -71,4 +71,12 @@
     (run-fn t06 [['a] [1] [[]] ["1"] [{}]]) 
     [{:default true}{:number true}{:vector true}{:string true}{:map true}])))
 
+(deftest bindings
+  (defpdfn ^:inline t07)
+  (pdfn t07 [x y]
+    (let [y 5
+          [b a y x] [:b :a :y :x]]
+      [b a y x]))
+  (is (= (t07 1 2) [:b :a :y :x])))
+
 (run-tests)

@@ -3,7 +3,7 @@
 
 (def ^:private DISPATCHMAP (atom {}))
 (def ^:private METAMAP (atom {}))
-(def ^:private argsyms (mapv (comp symbol str) "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOZ"))
+(def ^:private argsyms (vec (take 100 (repeatedly (partial gensym '_)))))
 
 (def and* every-pred)
 (def not* (fn [& args] (complement (apply and* args))))
