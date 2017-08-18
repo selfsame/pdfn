@@ -72,7 +72,7 @@
 
 (defn- ast->code [form] 
   (cond (vector? form) (seq (clojure.walk/walk ast->code identity (vec (remove #{::nf} form))))
-        (list? form)   (first form) 
+        (seq? form)   (if (= 1 (count form)) (first form) form) 
         :else form))
 
 (defn- datatype? [v] (or (sequential? v) (set? v) (map? v)))
