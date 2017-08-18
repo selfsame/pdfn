@@ -1,7 +1,7 @@
 # predicate dispatching for clojure / clojurescript
 
 ```clj
-[selfsame/pdfn "1.0.2"]
+[selfsame/pdfn "1.0.3"]
 ```
 
 > _***a multimethod style macro for compiling core.match style conditionals from ordered methods with predicate:argument patterns***_
